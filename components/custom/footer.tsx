@@ -109,6 +109,14 @@ export function Footer() {
                   Academic Calendar
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-sm text-gray-600 hover:text-primary transition-colors"
+                >
+                  Contact Us
+                </Link>
+              </li>
             </ul>
           </div>
 

@@ -22,13 +22,6 @@ type ScheduleVisitFormProps = {
 export function ScheduleVisitForm({ trigger }: ScheduleVisitFormProps) {
   const [open, setOpen] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    // Handle form submission here
-    // You can add email service integration later
-    setOpen(false);
-  };
-
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
@@ -50,7 +43,11 @@ export function ScheduleVisitForm({ trigger }: ScheduleVisitFormProps) {
             possible to schedule the visit.
           </DialogDescription>
         </DialogHeader>
-        <form onSubmit={handleSubmit} className="space-y-4 mt-4">
+        <form
+          action="https://formspree.io/f/xbjvvkez"
+          method="POST"
+          className="space-y-4 mt-4"
+        >
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="firstName">First Name *</Label>
