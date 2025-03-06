@@ -2,3 +2,4 @@
 *.avi filter=lfs diff=lfs merge=lfs -text
 *.wmv filter=lfs diff=lfs merge=lfs -text
 *.mp4 filter=lfs diff=lfs merge=lfs -text
+public/promo_2025_long.mp4 filter=lfs diff=lfs merge=lfs -text
