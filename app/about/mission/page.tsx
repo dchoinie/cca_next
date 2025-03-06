@@ -69,7 +69,7 @@ export default function Mission() {
         {/* Partnership Section */}
         <div className="mt-16 bg-primary/5 rounded-lg p-8 md:p-12">
           <div className="flex flex-col md:flex-row gap-8 items-center">
-            <div className="md:w-1/3">
+            <div className="w-full md:w-1/3">
               <div className="relative h-[250px] rounded-lg overflow-hidden">
                 <Image
                   src="/ss_42.png"

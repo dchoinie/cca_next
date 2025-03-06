@@ -14,7 +14,7 @@ export default function Affiliation() {
       <div className="max-w-6xl mx-auto px-4 py-16">
         {/* Church Connection Section */}
         <div className="flex flex-col md:flex-row gap-12 items-center mb-20">
-          <div className="md:w-1/2">
+          <div className="w-full md:w-1/2">
             <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
               <Image
                 src="/church_exterior.jpg"
@@ -81,7 +81,7 @@ export default function Affiliation() {
                 of Lutheran schools and churches.
               </p>
             </div>
-            <div className="md:w-1/3">
+            <div className="w-full md:w-1/3">
               <div className="relative aspect-16/9 rounded-lg overflow-hidden bg-white p-8 shadow-lg">
                 <Image
                   src="/lcms_logo.jpg"

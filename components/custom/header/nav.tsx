@@ -8,6 +8,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Container from "../container";
 import { useEffect, useState } from "react";
+import { MobileNav } from "./mobile-nav";
+import { admissionsUrl } from "@/constants";
 
 export function NavBar() {
   const [navigationItems, setNavigationItems] = useState<NavItem[]>([]);
@@ -29,22 +31,25 @@ export function NavBar() {
   const sortedItems = [...navigationItems].sort((a, b) => a.order - b.order);
 
   return (
-    <Container className="relative">
-      <div className="flex items-center justify-between w-full h-16">
+    <Container className="relative w-full">
+      <div className="flex items-center justify-end lg:justify-between w-full h-16">
         {/* Logo */}
-        <Link href="/" className="absolute top-0 mr-6 z-10">
+        <Link
+          href="/"
+          className="absolute top-[10%] lg:top-0 left-[5%] lg:left-0 mr-6 z-10"
+        >
           <Image
             src="/logo.png"
             alt="Logo"
             width={120}
             height={120}
-            className="h-36 w-auto"
+            className="h-24 lg:h-36 w-auto"
             priority
           />
         </Link>
 
-        {/* Navigation Items */}
-        <nav className="flex-1 ml-32">
+        {/* Desktop Navigation */}
+        <nav className="hidden md:block flex-1 ml-32">
           <ul className="flex items-center gap-2">
             {sortedItems.map((item: NavItem) => (
               <li key={item._id}>
@@ -54,8 +59,8 @@ export function NavBar() {
           </ul>
         </nav>
 
-        {/* CTA Buttons */}
-        <div className="flex items-center gap-4 ml-6">
+        {/* Desktop CTA Buttons */}
+        <div className="hidden md:flex items-center gap-4 ml-6">
           <Button
             variant="outline"
             asChild
@@ -70,14 +75,15 @@ export function NavBar() {
             </a>
           </Button>
           <Button asChild className="bg-primary hover:bg-primary/90 text-white">
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://cca-mn.client.renweb.com/oa/index.cfm?memberid=16976"
-            >
+            <a target="_blank" rel="noopener noreferrer" href={admissionsUrl}>
               Apply Now
             </a>
           </Button>
+        </div>
+
+        {/* Mobile Navigation */}
+        <div className="md:hidden pr-6">
+          <MobileNav navigationItems={navigationItems} />
         </div>
       </div>
     </Container>

@@ -1,6 +1,9 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/custom/page-hero";
+import { admissionsUrl } from "@/constants";
+import { ScheduleVisitForm } from "@/components/custom/schedule-visit-form";
+import { Button } from "@/components/ui/button";
 
 export default function WhyCCA() {
   return (
@@ -209,17 +212,18 @@ export default function WhyCCA() {
               and meet our dedicated faculty.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <ScheduleVisitForm
+                trigger={
+                  <Button className="px-8 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors cursor-pointer h-[58px]">
+                    Schedule a Visit
+                  </Button>
+                }
+              />
               <a
-                href="/schedule-visit"
-                className="inline-flex items-center justify-center px-8 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
-              >
-                Schedule a Visit
-              </a>
-              <a
-                href="https://cca-mn.client.renweb.com/oa/index.cfm?memberid=16976"
+                href={admissionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-8 py-3 border-2 border-primary text-primary rounded-lg hover:bg-primary/10 transition-colors"
+                className="inline-flex items-center justify-center px-8 py-3 border-2 border-primary text-primary rounded-lg hover:bg-primary/10 transition-colors h-[58px]"
               >
                 Apply Now
               </a>

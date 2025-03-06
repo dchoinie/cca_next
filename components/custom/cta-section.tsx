@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Button } from "../ui/button";
 import { ScheduleVisitForm } from "./schedule-visit-form";
+import { admissionsUrl } from "@/constants";
 
 export function CTASection() {
   return (
@@ -25,7 +26,7 @@ export function CTASection() {
       <div className="relative z-10 max-w-6xl mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Logo and Text */}
-          <div className="flex items-center gap-6">
+          <div className="flex flex-col lg:flex-row items-center gap-6">
             <div className="relative w-20 h-20 flex-shrink-0">
               <Image
                 src="/luther-rose.png"
@@ -34,7 +35,7 @@ export function CTASection() {
                 className="object-contain"
               />
             </div>
-            <div className="text-white">
+            <div className="text-white text-center lg:text-left">
               <h2 className="text-2xl md:text-3xl font-medium">
                 Begin Your Classical Education Journey
               </h2>
@@ -63,11 +64,7 @@ export function CTASection() {
               variant="outline"
               className="inline-flex items-center px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-medium hover:bg-white/10 hover:text-slate-200 transition-colors text-lg whitespace-nowrap h-[58px]"
             >
-              <a
-                href="https://cca-mn.client.renweb.com/oa/index.cfm?memberid=16976"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={admissionsUrl} target="_blank" rel="noopener noreferrer">
                 Apply Today
               </a>
             </Button>

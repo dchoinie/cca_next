@@ -8,9 +8,10 @@ import { useState, useRef, useEffect } from "react";
 
 interface NavItemProps {
   item: NavItem;
+  onNavigate?: () => void;
 }
 
-export function NavItemComponent({ item }: NavItemProps) {
+export function NavItemComponent({ item, onNavigate }: NavItemProps) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -74,7 +75,10 @@ export function NavItemComponent({ item }: NavItemProps) {
                       "focus:bg-secondary/20 focus:outline-none",
                       "transition-colors cursor-pointer"
                     )}
-                    onClick={() => setIsOpen(false)}
+                    onClick={() => {
+                      setIsOpen(false);
+                      onNavigate?.();
+                    }}
                   >
                     {subItem.label}
                   </Link>
@@ -89,7 +93,11 @@ export function NavItemComponent({ item }: NavItemProps) {
 
   // If no sublinks, render a simple link
   return (
-    <Link {...linkProps} className={cn(commonStyles, "block rounded-md")}>
+    <Link
+      {...linkProps}
+      className={cn(commonStyles, "block rounded-md")}
+      onClick={onNavigate}
+    >
       {item.label}
     </Link>
   );

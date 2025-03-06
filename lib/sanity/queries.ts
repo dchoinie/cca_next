@@ -54,6 +54,13 @@ export type Club = {
   };
 };
 
+export type HandbookSection = {
+  _id: string;
+  section: string;
+  description: string;
+  extraContent: PortableTextBlock[];
+};
+
 export async function getNavigationItems(): Promise<NavItem[]> {
   const query = `
     *[_type == "navItem"] | order(order asc) {
@@ -153,4 +160,18 @@ export async function getAllClubs(): Promise<Club[]> {
 
   const clubs = await client.fetch(query);
   return clubs;
+}
+
+export async function getHandbookSections(): Promise<HandbookSection[]> {
+  const query = `
+    *[_type == "handbook"] | order(section asc) {
+      _id,
+      section,
+      description,
+      extraContent
+    }
+  `;
+
+  const sections = await client.fetch(query);
+  return sections;
 }

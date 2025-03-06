@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useRef } from "react";
+import { admissionsUrl } from "@/constants";
 
 export function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -27,11 +28,7 @@ export function Hero() {
               size="lg"
               className="bg-primary hover:bg-primary/90 text-white text-lg px-8"
             >
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://cca-mn.client.renweb.com/oa/index.cfm?memberid=16976"
-              >
+              <a target="_blank" rel="noopener noreferrer" href={admissionsUrl}>
                 Apply Now
               </a>
             </Button>
@@ -41,7 +38,7 @@ export function Hero() {
               variant="outline"
               className="border-primary text-primary hover:bg-secondary/20 text-lg px-8"
             >
-              <Link href="/about">About CCA</Link>
+              <Link href="/about/mission">About CCA</Link>
             </Button>
           </div>
         </div>

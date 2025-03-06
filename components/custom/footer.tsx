@@ -6,6 +6,7 @@ import { Phone, Mail, MapPin } from "lucide-react";
 import { useEffect, useState } from "react";
 import { getNavigationItems } from "@/lib/sanity/queries";
 import { NavItem } from "@/types/navigation.types";
+import { parentPortalUrl } from "@/constants";
 
 export function Footer() {
   const [navigationItems, setNavigationItems] = useState<NavItem[]>([]);
@@ -22,9 +23,9 @@ export function Footer() {
   return (
     <footer className="bg-primary/5 border-t">
       <div className="max-w-screen-xl mx-auto px-4 py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 text-center lg:text-left md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Logo and Contact Section */}
-          <div className="space-y-4">
+          <div className="space-y-4 flex flex-col items-center lg:items-start text-left">
             <Link href="/" className="inline-block">
               <Image
                 src="/logo.png"
@@ -86,7 +87,7 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/parent-portal"
+                  href={parentPortalUrl}
                   className="text-sm text-gray-600 hover:text-primary transition-colors"
                 >
                   Parent Portal
@@ -102,15 +103,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/news"
-                  className="text-sm text-gray-600 hover:text-primary transition-colors"
-                >
-                  News & Events
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/calendar"
+                  href="/events/calendar"
                   className="text-sm text-gray-600 hover:text-primary transition-colors"
                 >
                   Academic Calendar
@@ -160,28 +153,12 @@ export function Footer() {
             </p>
             <div className="flex items-center gap-6">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/CCAMankato/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-primary transition-colors"
               >
                 Facebook
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-primary transition-colors"
-              >
-                Instagram
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-primary transition-colors"
-              >
-                LinkedIn
               </a>
             </div>
           </div>

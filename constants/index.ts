@@ -1,0 +1,8 @@
+const parentPortalUrl =
+  "https://accounts.renweb.com/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3DfamilyPortalCode%26redirect_uri%3Dhttps%253A%252F%252Ffamilyportal.renweb.com%252Fsignin-oidc%26response_type%3Dcode%26scope%3Dopenid%2520profile%2520familyPortalUserInfo%2520familyPortalUserConfig%2520offline_access%2520ftApi%26code_challenge%3DZARds3a0M82qVAKegWgNMwnRdSu0DWFA1GpBptWZtUg%26code_challenge_method%3DS256%26response_mode%3Dform_post%26nonce%3D638768001237393692.YTNhMzIzZmItNDkyMi00OTliLWFlN2QtYjlkYjY3NzZmNDc3MTljNDYyMzItNTNmNy00YmFkLThiODUtN2FkZWRlNzFkMzli%26state%3DCfDJ8Lq1N5Cgm6tFnilnlNGlkcFB2vT9JohEo8WqwCAUMhKQgUnwObmUoDbiOYNR3t3jDVR5hkMJrI8c-ZNOEIwsJA_tnWJVG9WAEBPROLIpdJKVT4cX5rhexgCDG4GwfTGm2sR5bp7mkPbR9mCRGaORVAzOrfbdngMUr9wHbsAnpYkFuDwFQIMLM1pSNelJjqpPwRq1iNNpL8EyNmmUgUALjyWjTlexU3kFkTsldQjnD0euZCuh_wmsD4qPch3KbCAQFtxobkmSI0gEC2E9BKPx2xrSfs9DUkaOiMf78dDPoM0Jlh8ZQ0PCQya8liVzbuimoz21vKw7RKDzlRQEH4K5z46H7zfyOvtLI6-S1bsKgbq4aN1rfUhoc-NNCLoLnw7EndzeI4CwelHmJiHn41cPxzilYCOf_P9VMaPc8TeEfXbw5RIYy4cVqE-a0-yzQb75eqiVVYLl3zPrKp04_TGUs7E%26x-client-SKU%3DID_NET6_0%26x-client-ver%3D6.35.0.0";
+const admissionsUrl =
+  "https://cca-mn.client.renweb.com/oa/index.cfm?memberid=16976";
+const requestInfoUrl =
+  "https://cca-mn.client.renweb.com/oa/inquiry.cfm?memberid=16976";
+
+export { parentPortalUrl, admissionsUrl, requestInfoUrl };
