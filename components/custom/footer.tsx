@@ -168,6 +168,14 @@ export function Footer() {
               >
                 Facebook
               </a>
+              <a
+                href="https://concordiaclassicalacademy.sanity.studio/desk"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-primary transition-colors"
+              >
+                Website Login
+              </a>
             </div>
           </div>
         </div>
