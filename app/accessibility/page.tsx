@@ -1,8 +1,24 @@
 import { PageHero } from "@/components/custom/page-hero";
+import { SEO } from "@/components/custom/seo";
 
 export default function Accessibility() {
   return (
     <main>
+      <SEO
+        title="Accessibility"
+        description="Learn about Concordia Classical Academy's commitment to digital accessibility. Our website is designed to be accessible to all users, including those with disabilities."
+        keywords={[
+          "accessibility",
+          "web accessibility",
+          "WCAG compliance",
+          "ADA compliance",
+          "accessible education",
+          "digital inclusion",
+          "assistive technology",
+          "screen reader support",
+        ]}
+        canonicalUrl="/accessibility"
+      />
       <PageHero
         title="Accessibility"
         subtitle="Ensuring an inclusive digital experience for all"

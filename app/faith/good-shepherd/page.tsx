@@ -1,9 +1,27 @@
 import { PageHero } from "@/components/custom/page-hero";
+import { SEO } from "@/components/custom/seo";
 import Image from "next/image";
 
 export default function GoodShepherdPage() {
   return (
     <div className="bg-white">
+      <SEO
+        title="Good Shepherd Lutheran Church"
+        description="Learn about Good Shepherd Lutheran Church, our spiritual foundation and church home. Discover our Lutheran worship, daily chapel services, and faith-integrated learning approach."
+        keywords={[
+          "Good Shepherd Lutheran Church",
+          "Lutheran church",
+          "LCMS church",
+          "Lutheran worship",
+          "church community",
+          "chapel services",
+          "faith integration",
+          "Lutheran congregation",
+          "church school",
+          "spiritual foundation",
+        ]}
+        canonicalUrl="/faith/good-shepherd"
+      />
       <PageHero
         title="Good Shepherd Lutheran Church"
         subtitle="Our church home and spiritual foundation"

@@ -1,8 +1,26 @@
 import { PageHero } from "@/components/custom/page-hero";
+import { SEO } from "@/components/custom/seo";
 
 export default function ClassicalEducationPage() {
   return (
     <div className="bg-white">
+      <SEO
+        title="What Is Classical Education?"
+        description="Discover the principles and benefits of classical Christian education at Concordia Classical Academy. Learn about the Trivium, Lutheran integration, and our time-tested approach to learning."
+        keywords={[
+          "classical education",
+          "trivium",
+          "classical Christian education",
+          "Lutheran education",
+          "grammar stage",
+          "logic stage",
+          "rhetoric stage",
+          "classical curriculum",
+          "liberal arts education",
+          "Christian classical school",
+        ]}
+        canonicalUrl="/academics/what-is-classical-education"
+      />
       <PageHero
         title="What Is Classical Education?"
         subtitle="Cultivating wisdom and virtue through time-tested methods"

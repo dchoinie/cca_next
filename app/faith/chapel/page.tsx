@@ -1,9 +1,27 @@
 import { PageHero } from "@/components/custom/page-hero";
+import { SEO } from "@/components/custom/seo";
 import Image from "next/image";
 
 export default function ChapelPage() {
   return (
     <div className="bg-white">
+      <SEO
+        title="Daily Chapel"
+        description="Experience daily worship and spiritual growth at Concordia Classical Academy's chapel services. Learn about our Lutheran worship practices and how we start each day in God's Word."
+        keywords={[
+          "daily chapel",
+          "Lutheran worship",
+          "school chapel",
+          "morning worship",
+          "Christian worship",
+          "chapel service",
+          "student worship",
+          "Lutheran liturgy",
+          "chapel schedule",
+          "school prayer",
+        ]}
+        canonicalUrl="/faith/chapel"
+      />
       <PageHero
         title="Daily Chapel"
         subtitle="Starting each day in worship and prayer"

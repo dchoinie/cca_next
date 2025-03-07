@@ -1,8 +1,26 @@
 import { PageHero } from "@/components/custom/page-hero";
+import { SEO } from "@/components/custom/seo";
 
 export default function TuitionPage() {
   return (
     <div className="bg-white">
+      <SEO
+        title="Tuition & Financial Assistance"
+        description="Learn about Concordia Classical Academy's tuition rates, financial assistance options, and scholarship opportunities. Making classical Lutheran education accessible for families."
+        keywords={[
+          "school tuition",
+          "financial assistance",
+          "tuition rates",
+          "school fees",
+          "tuition assistance",
+          "scholarships",
+          "financial aid",
+          "school costs",
+          "tuition payment",
+          "education financing",
+        ]}
+        canonicalUrl="/admissions/tuition-financial-assistance"
+      />
       <PageHero
         title="Tuition & Financial Assistance"
         subtitle="Making classical Lutheran education accessible for families"

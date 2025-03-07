@@ -1,9 +1,27 @@
 import { PageHero } from "@/components/custom/page-hero";
 import { Clock } from "lucide-react";
+import { SEO } from "@/components/custom/seo";
 
 export default function HoursPage() {
   return (
     <div className="bg-white">
+      <SEO
+        title="School Hours"
+        description="View Concordia Classical Academy's daily schedule, including regular school hours, morning care, and after-school care options for families."
+        keywords={[
+          "school hours",
+          "school schedule",
+          "morning care",
+          "after school care",
+          "extended care",
+          "school day",
+          "drop off time",
+          "pick up time",
+          "daily schedule",
+          "school timing",
+        ]}
+        canonicalUrl="/about/hours"
+      />
       <PageHero
         title="School Hours"
         subtitle="Daily schedule and extended care options for our families"

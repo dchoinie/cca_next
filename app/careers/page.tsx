@@ -1,8 +1,25 @@
 import { PageHero } from "@/components/custom/page-hero";
+import { SEO } from "@/components/custom/seo";
 
 export default function Careers() {
   return (
     <main>
+      <SEO
+        title="Careers"
+        description="Explore career opportunities at Concordia Classical Academy. Join our mission of providing excellence in classical Christian education. View current openings and application process."
+        keywords={[
+          "careers",
+          "teaching jobs",
+          "school employment",
+          "education careers",
+          "classical education jobs",
+          "Christian school jobs",
+          "teaching positions",
+          "school staff positions",
+          "faculty openings",
+        ]}
+        canonicalUrl="/careers"
+      />
       <PageHero
         title="Careers"
         subtitle="Join our mission of classical Christian education"

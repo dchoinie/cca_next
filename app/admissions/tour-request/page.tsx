@@ -1,9 +1,27 @@
 import { PageHero } from "@/components/custom/page-hero";
 import { ScheduleVisitForm } from "@/components/custom/schedule-visit-form";
+import { SEO } from "@/components/custom/seo";
 
 export default function TourRequestPage() {
   return (
     <div className="bg-white">
+      <SEO
+        title="Schedule a Tour"
+        description="Visit Concordia Classical Academy and experience our classical Lutheran education firsthand. Schedule a campus tour to meet our teachers, observe classes, and learn about our programs."
+        keywords={[
+          "school tour",
+          "campus visit",
+          "schedule visit",
+          "school tour request",
+          "admissions tour",
+          "visit campus",
+          "school visit",
+          "tour scheduling",
+          "campus tour",
+          "school observation",
+        ]}
+        canonicalUrl="/admissions/tour-request"
+      />
       <PageHero
         title="Schedule a Tour"
         subtitle="Experience our classical Lutheran education firsthand"

@@ -1,9 +1,27 @@
 import { PageHero } from "@/components/custom/page-hero";
 import { DonationForm } from "@/components/custom/DonationForm";
+import { SEO } from "@/components/custom/seo";
 
 export default function DonatePage() {
   return (
     <div className="bg-white">
+      <SEO
+        title="Support Our Mission"
+        description="Support Concordia Classical Academy's mission of providing excellent Christian education. Your tax-deductible donations help maintain our facilities and provide financial assistance to families."
+        keywords={[
+          "school donations",
+          "donate to CCA",
+          "school support",
+          "tax deductible donations",
+          "Christian education support",
+          "school fundraising",
+          "educational donations",
+          "school financial support",
+          "donation form",
+          "school giving",
+        ]}
+        canonicalUrl="/donate"
+      />
       <PageHero
         title="Support Our Mission"
         subtitle="Help us provide excellent Christian education for future generations"

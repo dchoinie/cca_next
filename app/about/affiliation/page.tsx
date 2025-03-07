@@ -1,9 +1,27 @@
 import Image from "next/image";
 import { PageHero } from "@/components/custom/page-hero";
+import { SEO } from "@/components/custom/seo";
 
 export default function Affiliation() {
   return (
     <div className="bg-white">
+      <SEO
+        title="Church Affiliation"
+        description="Learn about Concordia Classical Academy's partnership with Good Shepherd Lutheran Church and our connection to the Lutheran Church—Missouri Synod (LCMS)."
+        keywords={[
+          "Lutheran church affiliation",
+          "Good Shepherd Lutheran Church",
+          "LCMS school",
+          "Lutheran partnership",
+          "church school",
+          "Lutheran education",
+          "Missouri Synod",
+          "Christian partnership",
+          "Lutheran community",
+          "church campus",
+        ]}
+        canonicalUrl="/about/affiliation"
+      />
       <PageHero
         title="Church Affiliation"
         subtitle="Connected in faith and education with Good Shepherd Lutheran Church"

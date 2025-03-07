@@ -1,11 +1,27 @@
 import { PageHero } from "@/components/custom/page-hero";
+import { SEO } from "@/components/custom/seo";
 
 export default function TermsAndConditions() {
   return (
     <main>
+      <SEO
+        title="Terms & Conditions"
+        description="Review Concordia Classical Academy's terms and conditions. Understand our website usage policies, admission requirements, and legal agreements."
+        keywords={[
+          "terms and conditions",
+          "website terms",
+          "legal agreement",
+          "school policies",
+          "admission terms",
+          "website usage",
+          "Concordia Classical Academy terms",
+        ]}
+        canonicalUrl="/terms"
+      />
       <PageHero
         title="Terms & Conditions"
         subtitle="Understanding our website usage policies"
+        backgroundImage=""
       />
 
       <div className="container mx-auto px-4 py-12">

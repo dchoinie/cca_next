@@ -1,12 +1,30 @@
 import { PageHero } from "@/components/custom/page-hero";
 import { StaffCard } from "@/components/custom/staff-card";
 import { getAllStaffMembers } from "@/lib/sanity/queries";
+import { SEO } from "@/components/custom/seo";
 
 export default async function StaffPage() {
   const staffMembers = await getAllStaffMembers();
 
   return (
     <div className="bg-white">
+      <SEO
+        title="Our Staff"
+        description="Meet the dedicated teachers and staff members at Concordia Classical Academy who provide excellence in classical Lutheran education for our students."
+        keywords={[
+          "school staff",
+          "teachers",
+          "faculty",
+          "school employees",
+          "educators",
+          "teaching staff",
+          "school administration",
+          "Lutheran teachers",
+          "classical educators",
+          "school personnel",
+        ]}
+        canonicalUrl="/about/staff"
+      />
       <PageHero
         title="Our Staff"
         subtitle="Meet the dedicated team that makes Concordia Classical Academy exceptional"

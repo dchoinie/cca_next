@@ -1,8 +1,26 @@
 import { PageHero } from "@/components/custom/page-hero";
+import { SEO } from "@/components/custom/seo";
 
 export default function LearnByHeartPage() {
   return (
     <div className="bg-white">
+      <SEO
+        title="Learn By Heart Challenge"
+        description="Discover our Lutheran catechesis and Scripture memory program. Building a strong foundation of faith through memorization of God's Word and Lutheran doctrine."
+        keywords={[
+          "Lutheran catechesis",
+          "Scripture memory",
+          "Bible memorization",
+          "Lutheran education",
+          "catechism learning",
+          "Christian memory work",
+          "Lutheran doctrine",
+          "faith education",
+          "Bible study",
+          "Lutheran teaching",
+        ]}
+        canonicalUrl="/academics/learn-by-heart-challenge"
+      />
       <PageHero
         title="Learn By Heart Challenge"
         subtitle="Building a foundation of faith through Lutheran catechesis and Scripture memory"

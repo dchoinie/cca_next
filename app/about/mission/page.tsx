@@ -1,9 +1,27 @@
 import Image from "next/image";
 import { PageHero } from "@/components/custom/page-hero";
+import { SEO } from "@/components/custom/seo";
 
 export default function Mission() {
   return (
     <div className="bg-white">
+      <SEO
+        title="Our Mission"
+        description="Discover Concordia Classical Academy's mission to help students grow in grace and knowledge of Christ through classical Lutheran education focused on truth, goodness, and beauty."
+        keywords={[
+          "school mission",
+          "Christian education mission",
+          "Lutheran school mission",
+          "classical education goals",
+          "educational philosophy",
+          "Christ-centered education",
+          "classical approach",
+          "educational values",
+          "school vision",
+          "Lutheran education",
+        ]}
+        canonicalUrl="/about/mission"
+      />
       <PageHero title="Our Mission" backgroundImage="/ss_2.png" />
 
       {/* Mission Statement Section */}

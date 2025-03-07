@@ -1,12 +1,30 @@
 import { PageHero } from "@/components/custom/page-hero";
 import { getAllClubs } from "@/lib/sanity/queries";
 import Image from "next/image";
+import { SEO } from "@/components/custom/seo";
 
 export default async function ClubsPage() {
   const clubs = await getAllClubs();
 
   return (
     <div className="bg-white">
+      <SEO
+        title="Student Clubs"
+        description="Explore the diverse range of student clubs at Concordia Classical Academy. From academic to extracurricular activities, find opportunities for your child to grow, learn, and connect with peers."
+        keywords={[
+          "student clubs",
+          "school clubs",
+          "extracurricular activities",
+          "student activities",
+          "school activities",
+          "after school clubs",
+          "student organizations",
+          "school programs",
+          "student groups",
+          "club activities",
+        ]}
+        canonicalUrl="/events/clubs"
+      />
       <PageHero
         title="Student Clubs"
         subtitle="Enriching activities that foster community, creativity, and growth"

@@ -4,10 +4,28 @@ import { PageHero } from "@/components/custom/page-hero";
 import { admissionsUrl } from "@/constants";
 import { ScheduleVisitForm } from "@/components/custom/schedule-visit-form";
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/custom/seo";
 
 export default function WhyCCA() {
   return (
     <div className="bg-white">
+      <SEO
+        title="Why Choose CCA?"
+        description="Discover what makes Concordia Classical Academy unique: our classical Lutheran education, small class sizes, Christ-centered teaching, and excellence in music education."
+        keywords={[
+          "why choose CCA",
+          "school benefits",
+          "classical education",
+          "Lutheran school advantages",
+          "Christian education",
+          "student-teacher ratio",
+          "music program",
+          "academic excellence",
+          "school choice",
+          "classical Christian",
+        ]}
+        canonicalUrl="/about/why-CCA"
+      />
       <PageHero
         title="Why Choose CCA?"
         subtitle="Join a community where classical education meets Lutheran faith, creating an environment where students thrive academically and spiritually."

@@ -1,9 +1,27 @@
 import { PageHero } from "@/components/custom/page-hero";
+import { SEO } from "@/components/custom/seo";
 import Image from "next/image";
 
 export default function ChristianEducationPage() {
   return (
     <div className="bg-white">
+      <SEO
+        title="The Impact of Lutheran Education"
+        description="Discover the proven benefits and lasting impact of Lutheran education. Research shows significant differences in faith development, academic achievement, and personal growth."
+        keywords={[
+          "Lutheran education",
+          "Christian education",
+          "faith development",
+          "academic achievement",
+          "Lutheran schools",
+          "religious education",
+          "Christian academics",
+          "Lutheran teaching",
+          "faith formation",
+          "educational research",
+        ]}
+        canonicalUrl="/faith/christian-education"
+      />
       <PageHero
         title="The Impact of Lutheran Education"
         subtitle="Research-backed benefits of Lutheran schools in faith and academics"

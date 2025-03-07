@@ -1,0 +1,26 @@
+# https://www.ccamankato.education robots.txt
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+Allow: /about/
+Allow: /academics/
+Allow: /admissions/
+Allow: /faith/
+Allow: /events/
+Allow: /support/
+Allow: /contact/
+Allow: /resources/
+
+# Block potential sensitive areas
+Disallow: /api/
+Disallow: /_next/
+Disallow: /*?
+Disallow: /*?*
+Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://www.ccamankato.org/sitemap.xml
+
+# Crawl-delay for all bots
+Crawl-delay: 10 

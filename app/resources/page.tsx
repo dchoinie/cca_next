@@ -1,4 +1,5 @@
 import { PageHero } from "@/components/custom/page-hero";
+import { SEO } from "@/components/custom/seo";
 import { getAllResources } from "@/lib/sanity/queries";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,6 +13,23 @@ export default async function ResourcesPage() {
 
   return (
     <div className="bg-white">
+      <SEO
+        title="Resources"
+        description="Access helpful Lutheran and educational resources curated by Concordia Classical Academy. Find materials to support your child's spiritual and academic growth."
+        keywords={[
+          "Lutheran resources",
+          "educational resources",
+          "learning materials",
+          "Christian resources",
+          "academic resources",
+          "parent resources",
+          "student resources",
+          "teaching materials",
+          "Lutheran education",
+          "school resources",
+        ]}
+        canonicalUrl="/resources"
+      />
       <PageHero
         title="Resources"
         subtitle="Helpful links and resources for our school community"

@@ -1,12 +1,29 @@
 import { PageHero } from "@/components/custom/page-hero";
 import { getHandbookSections } from "@/lib/sanity/queries";
 import { PortableText } from "@portabletext/react";
+import { SEO } from "@/components/custom/seo";
 
 export default async function StudentHandbookPage() {
   const sections = await getHandbookSections();
 
   return (
     <main>
+      <SEO
+        title="Student Handbook"
+        description="Access Concordia Classical Academy's comprehensive student handbook. Find important policies, procedures, and guidelines for our school community."
+        keywords={[
+          "student handbook",
+          "school policies",
+          "academic guidelines",
+          "school procedures",
+          "student conduct",
+          "parent information",
+          "school rules",
+          "academic policies",
+          "student expectations",
+        ]}
+        canonicalUrl="/academics/student-handbook"
+      />
       <PageHero
         title="Student Handbook"
         subtitle="Important information and guidelines for our students"

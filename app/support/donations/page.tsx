@@ -3,6 +3,7 @@
 import { PageHero } from "@/components/custom/page-hero";
 import { DonationForm } from "@/components/custom/DonationForm";
 import { useState } from "react";
+import { SEO } from "@/components/custom/seo";
 
 export default function DonationsPage() {
   const [selectedAmount, setSelectedAmount] = useState(100);
@@ -23,6 +24,23 @@ export default function DonationsPage() {
 
   return (
     <div className="bg-white">
+      <SEO
+        title="Make a Donation"
+        description="Support Concordia Classical Academy through various giving options. Your generous donations help provide financial assistance, maintain facilities, and enhance our academic programs."
+        keywords={[
+          "make donation",
+          "school giving",
+          "support education",
+          "financial support",
+          "charitable giving",
+          "monthly donation",
+          "planned giving",
+          "school donation",
+          "gift options",
+          "support CCA",
+        ]}
+        canonicalUrl="/support/donations"
+      />
       <PageHero
         title="Support Our Mission"
         subtitle="Partner with us in providing excellent Christian education"

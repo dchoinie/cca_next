@@ -1,6 +1,7 @@
 import { PageHero } from "@/components/custom/page-hero";
 import { getAllSupplyLists } from "@/lib/sanity/queries";
 import { PortableText } from "@portabletext/react";
+import { SEO } from "@/components/custom/seo";
 
 export default async function SupplyListPage() {
   const supplyLists = await getAllSupplyLists();
@@ -17,6 +18,22 @@ export default async function SupplyListPage() {
 
   return (
     <div className="bg-white">
+      <SEO
+        title="School Supply Lists"
+        description="Find comprehensive supply lists for all grade levels at Concordia Classical Academy. Ensure your student has everything needed for a successful academic year."
+        keywords={[
+          "school supplies",
+          "supply lists",
+          "classroom materials",
+          "grade supplies",
+          "back to school",
+          "student supplies",
+          "school materials",
+          "academic supplies",
+          "classroom supplies",
+        ]}
+        canonicalUrl="/academics/supply-list"
+      />
       <PageHero
         title="Supply Lists"
         subtitle="Everything your student needs for a successful year"

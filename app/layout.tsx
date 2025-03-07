@@ -4,6 +4,7 @@ import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 import { NavBar } from "@/components/custom/header/nav";
 import { Footer } from "@/components/custom/footer";
+import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 
 export const metadata: Metadata = {
   title: "Concordia Classical Academy",
@@ -18,6 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body className="min-h-screen flex flex-col font-sans antialiased">
+        <GoogleAnalytics />
         <NavBar />
         <main className="flex-1">{children}</main>
         <Footer />

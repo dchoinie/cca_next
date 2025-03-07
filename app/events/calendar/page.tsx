@@ -1,8 +1,26 @@
 import { PageHero } from "@/components/custom/page-hero";
+import { SEO } from "@/components/custom/seo";
 
 export default function CalendarPage() {
   return (
     <div className="bg-white">
+      <SEO
+        title="School Calendar"
+        description="Stay informed about Concordia Classical Academy's upcoming events, holidays, and important dates. Access our comprehensive school calendar for chapel services, special events, and academic schedules."
+        keywords={[
+          "school calendar",
+          "school events",
+          "academic calendar",
+          "school schedule",
+          "school holidays",
+          "chapel services",
+          "school activities",
+          "event calendar",
+          "school dates",
+          "academic schedule",
+        ]}
+        canonicalUrl="/events/calendar"
+      />
       <PageHero
         title="School Calendar"
         subtitle="Stay up to date with school events and activities"

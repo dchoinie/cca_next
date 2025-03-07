@@ -1,8 +1,22 @@
 import { PageHero } from "@/components/custom/page-hero";
+import { SEO } from "@/components/custom/seo";
 
 export default function PrivacyPolicy() {
   return (
     <main>
+      <SEO
+        title="Privacy Policy"
+        description="Learn about how Concordia Classical Academy protects and handles your information. Our privacy policy outlines our data collection, usage, and protection practices."
+        keywords={[
+          "privacy policy",
+          "data protection",
+          "student privacy",
+          "information security",
+          "Concordia Classical Academy privacy",
+          "school data policy",
+        ]}
+        canonicalUrl="/privacy"
+      />
       <PageHero
         title="Privacy Policy"
         subtitle="How we protect and handle your information"

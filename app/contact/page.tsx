@@ -4,10 +4,28 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { SEO } from "@/components/custom/seo";
 
 export default function Contact() {
   return (
     <main>
+      <SEO
+        title="Contact Us"
+        description="Get in touch with Concordia Classical Academy. Find our contact information, office hours, and ways to reach us for questions about our classical Lutheran education."
+        keywords={[
+          "contact CCA",
+          "school contact",
+          "Concordia Classical Academy contact",
+          "school office",
+          "school phone",
+          "school email",
+          "school address",
+          "contact information",
+          "school hours",
+          "office hours",
+        ]}
+        canonicalUrl="/contact"
+      />
       <PageHero
         title="Contact Us"
         subtitle="Get in touch with Concordia Classical Academy"
