@@ -1,27 +1,23 @@
 import type { Metadata } from "next";
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { NavBar } from "@/components/custom/header/nav";
+import { PageWrapper } from "@/components/custom/page-wrapper";
 import { Footer } from "@/components/custom/footer";
-import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Concordia Classical Academy",
-  description: "Christ-centered classical education",
+  description: "Excellence in classical Lutheran education",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
-      <body className="min-h-screen flex flex-col font-sans antialiased">
-        <GoogleAnalytics />
+    <html lang="en">
+      <body className={inter.className}>
         <NavBar />
-        <main className="flex-1">{children}</main>
+        <PageWrapper>{children}</PageWrapper>
         <Footer />
       </body>
     </html>
