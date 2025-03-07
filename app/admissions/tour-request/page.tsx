@@ -140,11 +140,11 @@ export default function TourRequestPage() {
         <AnimatedSection delay={0.3}>
           <div className="mt-12 grid md:grid-cols-2 gap-8">
             <AnimatedCard delay={0.4}>
-              <div className="bg-white border border-slate-200 rounded-lg p-6">
+              <div className="bg-white border border-slate-200 rounded-lg p-6 h-full flex flex-col">
                 <h3 className="font-serif text-primary text-lg mb-3">
                   Best Times to Visit
                 </h3>
-                <p className="text-slate-600">
+                <p className="text-slate-600 flex-grow">
                   School tours are typically scheduled during regular school
                   hours, allowing you to see our vibrant learning environment in
                   action. We&apos;ll work with your schedule to find the best
@@ -153,11 +153,11 @@ export default function TourRequestPage() {
               </div>
             </AnimatedCard>
             <AnimatedCard delay={0.5}>
-              <div className="bg-white border border-slate-200 rounded-lg p-6">
+              <div className="bg-white border border-slate-200 rounded-lg p-6 h-full flex flex-col">
                 <h3 className="font-serif text-primary text-lg mb-3">
                   What to Expect
                 </h3>
-                <p className="text-slate-600">
+                <p className="text-slate-600 flex-grow">
                   Your visit will typically last about an hour, during which
                   you&apos;ll tour the campus, observe classes, and have time
                   for questions with our staff.

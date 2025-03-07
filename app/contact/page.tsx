@@ -46,7 +46,8 @@ export default function Contact() {
               >
                 Tour Request
               </Link>{" "}
-              page to schedule your visit.
+              page to schedule your visit. Otherwise, any other general
+              inquiries can be submitted below.
             </p>
           </div>
 
