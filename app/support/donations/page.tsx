@@ -137,12 +137,12 @@ export default function DonationsPage() {
             <div className="text-center text-sm text-slate-500">
               <p className="mb-2">
                 For questions about donations or to discuss other ways to
-                support our school, please contact our development office.
+                support our school, please contact our office.
               </p>
               <p>
-                <strong>Email:</strong> development@concordiaclassical.org
+                <strong>Email:</strong> ccamankato@gmail.com
                 <br />
-                <strong>Phone:</strong> (555) 123-4567
+                <strong>Phone:</strong> 507-304-7430
               </p>
             </div>
           </div>
