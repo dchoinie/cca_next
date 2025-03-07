@@ -37,7 +37,7 @@ export default function WhyCCA() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-12">
             <div className="text-center">
-              <div className="text-4xl font-bold text-primary mb-2">12:1</div>
+              <div className="text-4xl font-bold text-primary mb-2">15:1</div>
               <div className="text-sm text-slate-600 font-medium">
                 Student-Teacher Ratio
               </div>

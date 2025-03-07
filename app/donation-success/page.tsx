@@ -7,7 +7,7 @@ export default function DonationSuccessPage() {
       <PageHero
         title="Thank You for Your Donation!"
         subtitle="Your generous support helps us continue our mission"
-        backgroundImage="/ss_15.png"
+        backgroundImage="/ss_36.png"
       />
 
       <div className="max-w-3xl mx-auto px-4 py-16 text-center">

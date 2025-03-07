@@ -42,11 +42,9 @@ export default function CalendarPage() {
         <div className="bg-white border border-slate-200 rounded-lg p-4 shadow-sm">
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg">
             <iframe
-              src="https://calendar.google.com/calendar/embed?src=04d1jv6i9db6of4cq4kag6487s%40group.calendar.google.com&ctz=America%2FChicago"
-              className="absolute inset-0 w-full h-full"
-              style={{ border: 0 }}
-              frameBorder="0"
-              scrolling="no"
+              src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FChicago&showPrint=0&title=Concordia%20Classical%20Academy&src=MDRkMWp2Nmk5ZGI2b2Y0Y3E0a2FnNjQ4N3NAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23AD1457"
+              style={{ border: "solid 1px #777" }}
+              className="w-full h-full"
             />
           </div>
         </div>
