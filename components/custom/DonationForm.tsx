@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Elements,
   PaymentElement,
@@ -195,7 +195,7 @@ const DonationFormContent = ({ amount }: { amount: number }) => {
 export function DonationForm({ amount }: { amount: number }) {
   const [clientSecret, setClientSecret] = useState<string>();
 
-  useState(() => {
+  useEffect(() => {
     // Create initial PaymentIntent
     fetch("/api/create-payment-intent", {
       method: "POST",
@@ -204,7 +204,7 @@ export function DonationForm({ amount }: { amount: number }) {
     })
       .then((res) => res.json())
       .then((data) => setClientSecret(data.clientSecret));
-  });
+  }, [amount]);
 
   if (!clientSecret) {
     return (
