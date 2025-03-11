@@ -4,6 +4,7 @@ import "./globals.css";
 import { NavBar } from "@/components/custom/header/nav";
 import { PageWrapper } from "@/components/custom/page-wrapper";
 import { Footer } from "@/components/custom/footer";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,6 +16,12 @@ export const metadata: Metadata = {
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <Script
+          src="https://player.vimeo.com/api/player.js"
+          strategy="lazyOnload"
+        />
+      </head>
       <body className={`${inter.className} overflow-x-hidden`}>
         <NavBar />
         <PageWrapper>{children}</PageWrapper>

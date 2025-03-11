@@ -2,12 +2,9 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { useRef } from "react";
 import { admissionsUrl } from "@/constants";
 
 export function Hero() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
   return (
     <div className="min-h-screen bg-primary/5 pt-12">
       {/* Content Container */}
@@ -45,15 +42,21 @@ export function Hero() {
 
         {/* Video Section */}
         <div className="relative rounded-lg overflow-hidden shadow-xl bg-primary/5">
-          <video
-            ref={videoRef}
-            controls
-            className="w-full aspect-video object-cover"
-            poster="/poster.png"
-          >
-            <source src="/promo_2025_long.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <div style={{ position: "relative", paddingTop: "56.25%" }}>
+            <iframe
+              src="https://player.vimeo.com/video/1064851446?h=e9da69e3a7&badge=0&autopause=0&;player_id=0&app_id=58479"
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+              }}
+              frameBorder="0"
+              allow="fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+              title="promo_2025_long"
+            />
+          </div>
         </div>
       </div>
     </div>
