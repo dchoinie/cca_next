@@ -126,7 +126,7 @@ export default function ChristianEducationPage() {
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
               <AnimatedCard delay={0.3}>
-                <div className="bg-white rounded-lg p-6 shadow-sm">
+                <div className="bg-white rounded-lg p-6 shadow-sm h-full">
                   <h3 className="font-serif text-xl text-primary mb-4">
                     Spiritual Life
                   </h3>
@@ -151,7 +151,7 @@ export default function ChristianEducationPage() {
                 </div>
               </AnimatedCard>
               <AnimatedCard delay={0.4}>
-                <div className="bg-white rounded-lg p-6 shadow-sm">
+                <div className="bg-white rounded-lg p-6 shadow-sm h-full">
                   <h3 className="font-serif text-xl text-primary mb-4">
                     Faith Understanding
                   </h3>
@@ -176,7 +176,7 @@ export default function ChristianEducationPage() {
                 </div>
               </AnimatedCard>
               <AnimatedCard delay={0.5}>
-                <div className="bg-white rounded-lg p-6 shadow-sm">
+                <div className="bg-white rounded-lg p-6 shadow-sm h-full">
                   <h3 className="font-serif text-xl text-primary mb-4">
                     Character Development
                   </h3>
