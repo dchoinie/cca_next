@@ -44,18 +44,16 @@ export function Hero() {
         <div className="relative rounded-lg overflow-hidden shadow-xl bg-primary/5">
           <div style={{ position: "relative", paddingTop: "56.25%" }}>
             <iframe
-              src="https://player.vimeo.com/video/1064851446?h=e9da69e3a7&badge=0&autopause=0&;player_id=0&app_id=58479"
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%",
-              }}
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/YVG90KPfaEA?si=4qWUdu7dy35XDrAD"
+              title="YouTube video player"
               frameBorder="0"
-              allow="fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-              title="promo_2025_long"
-            />
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              className="absolute top-0 left-0 w-full h-full"
+            ></iframe>
           </div>
         </div>
       </div>
