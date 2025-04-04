@@ -161,7 +161,7 @@ export default function ResourcesPage() {
                       rel="noopener noreferrer"
                       className="group h-full block"
                     >
-                      <div className="bg-white border border-slate-200 rounded-lg overflow-hidden transition-shadow hover:shadow-lg h-full flex flex-col">
+                      <div className="bg-white border border-slate-200 rounded-lg overflow-hidden transition-shadow hover:shadow-lg h-full flex flex-col shadow-md">
                         <div className="relative h-48 flex-shrink-0">
                           <Image
                             src={resource.image.asset.url}

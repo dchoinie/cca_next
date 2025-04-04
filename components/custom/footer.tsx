@@ -155,7 +155,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-gray-200">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-gray-600 text-center lg:text-left">
               © {new Date().getFullYear()} Concordia Classical Academy. All
               rights reserved.
             </p>
