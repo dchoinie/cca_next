@@ -43,7 +43,7 @@ export function NavBar() {
         {/* Logo */}
         <Link
           href="/"
-          className="absolute top-[10%] lg:top-0 left-[5%] lg:left-0 mr-6 z-10"
+          className="absolute top-[10%] lg:top-[10%] left-[5%] lg:left-0 mr-6 z-10"
         >
           <Image
             src="/logo.png"

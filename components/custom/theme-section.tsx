@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export function ThemeSection() {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16">
       <div className="max-w-6xl mx-auto px-4">
         {/* Section Heading */}
         <div className="text-center mb-12">
@@ -17,10 +17,10 @@ export function ThemeSection() {
         </div>
 
         {/* Images Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative">
           {/* Left: Image with caption */}
-          <div>
-            <div className="relative w-full max-w-2xl mx-auto aspect-[16/9] rounded-lg overflow-hidden shadow-xl">
+          <div className="flex flex-col items-center md:items-end">
+            <div className="relative w-full max-w-2xl aspect-[16/9] rounded-lg overflow-hidden shadow-2xl border border-white/60 backdrop-blur-md">
               <Image
                 src="/cca_2024_all_school.jpg"
                 alt="Concordia Classical Academy - All School Photo 2024"
@@ -28,19 +28,23 @@ export function ThemeSection() {
                 className="object-cover"
               />
             </div>
-            <p className="text-center mt-4 text-gray-600 italic font-light">
+            <p className="text-center mt-4 text-gray-600 italic font-light max-w-md">
               Our Concordia Classical Academy family - united in faith,
               learning, and purpose
             </p>
           </div>
-          {/* Right: Theme title and Psalm in a card */}
-          <div className="flex flex-col items-center md:items-start">
+
+          {/* Divider for desktop */}
+          <div className="hidden md:block absolute left-1/2 top-0 h-full w-px bg-gradient-to-b from-transparent via-primary/20 to-transparent z-10" />
+
+          {/* Right: Theme title, icon, and Psalm in a glass card */}
+          <div className="flex flex-col items-center md:items-start z-20">
             <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4 font-serif text-center md:text-left">
               &quot;Make a Joyful Noise to the Lord&quot;
             </h2>
-            <div className="bg-gray-50 border border-primary/20 rounded-lg shadow p-6 w-full">
+            <div className="bg-white/60 backdrop-blur-md border border-primary/10 rounded-lg shadow-lg p-6 w-full max-w-lg">
               <p className="text-gray-700 text-base md:text-lg leading-relaxed italic">
-                Psalm 98:1-4
+                <span className="font-semibold text-primary">Psalm 98:1-4</span>
                 <br />
                 &quot;1 Oh sing to the Lord a new song, for he has done
                 marvelous things! His right hand and his holy arm have worked
