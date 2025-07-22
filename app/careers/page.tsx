@@ -36,25 +36,25 @@ const openPositions: OpenPosition[] = [
         <li>Understands Classical pedagogy in education.</li>
       </>
     ),
-    active: true,
+    active: false,
   },
   {
     title: "Cook",
     description:
       "The cook will be responsible for preparing and serving meals to the students and staff at Concordia Classical Academy. The cook will be responsible for the daily meal plan and menu, and will be responsible for the cleanliness of the kitchen and dining area.",
-    active: true,
+    active: false,
   },
   {
     title: "Custodian",
     description:
       "The custodian will maintain the cleanliness and upkeep of the school building and grounds, performing daily cleaning tasks and general maintenance as needed.",
-    active: true,
+    active: false,
   },
   {
     title: "Before Care",
     description:
       "The before care will be responsible for the care of the students before the start of the school day. The before care will be responsible for the daily care of the students, and will be responsible for the cleanliness of the before care area.",
-    active: true,
+    active: false,
   },
 ];
 
@@ -92,14 +92,6 @@ export default function Careers() {
               pastor@ccamankato.education
             </a>
           </p>
-
-          <Image
-            src="/open_positions.jpg"
-            alt="Open Positions"
-            width={1000}
-            height={1000}
-          />
-
           <h2 className="mt-12 mb-6">Current Openings</h2>
           <div className="bg-muted p-6 rounded-lg mb-8">
             {openPositions.filter((position) => position.active).length > 0 ? (

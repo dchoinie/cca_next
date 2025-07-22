@@ -12,26 +12,13 @@ export function ThemeSection() {
             Our School Theme
           </h2>
           <p className="text-lg md:text-xl text-gray-600 font-light tracking-wide">
-            2024-2025 Academic Year
+            2025-2026 Academic Year
           </p>
         </div>
 
         {/* Images Grid */}
-        <div className="grid md:grid-cols-2 gap-8 items-start">
-          {/* Theme Image */}
-          <div>
-            <div className="relative w-full max-w-md mx-auto aspect-[3/4] rounded-lg overflow-hidden shadow-xl">
-              <Image
-                src="/24_25_theme.jpg"
-                alt="2024-2025 School Year Theme - Endure"
-                fill
-                className="object-contain bg-white"
-                priority
-              />
-            </div>
-          </div>
-
-          {/* Full School Photo */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Left: Image with caption */}
           <div>
             <div className="relative w-full max-w-2xl mx-auto aspect-[16/9] rounded-lg overflow-hidden shadow-xl">
               <Image
@@ -45,6 +32,27 @@ export function ThemeSection() {
               Our Concordia Classical Academy family - united in faith,
               learning, and purpose
             </p>
+          </div>
+          {/* Right: Theme title and Psalm in a card */}
+          <div className="flex flex-col items-center md:items-start">
+            <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4 font-serif text-center md:text-left">
+              &quot;Make a Joyful Noise to the Lord&quot;
+            </h2>
+            <div className="bg-gray-50 border border-primary/20 rounded-lg shadow p-6 w-full">
+              <p className="text-gray-700 text-base md:text-lg leading-relaxed italic">
+                Psalm 98:1-4
+                <br />
+                &quot;1 Oh sing to the Lord a new song, for he has done
+                marvelous things! His right hand and his holy arm have worked
+                salvation for him. <br />2 The Lord has made known his
+                salvation; he has revealed his righteousness in the sight of the
+                nations. <br />3 He has remembered his steadfast love and
+                faithfulness to the house of Israel. All the ends of the earth
+                have seen the salvation of our God. <br />4 Make a joyful noise
+                to the Lord, all the earth; break forth into joyous song and
+                sing praises!&quot;
+              </p>
+            </div>
           </div>
         </div>
       </div>
