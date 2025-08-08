@@ -25,19 +25,9 @@ export async function GET(request: NextRequest) {
     const calendarId = process.env.GOOGLE_CALENDAR_ID;
     const apiKey = process.env.GOOGLE_CALENDAR_API_KEY;
 
-    // Debug logging
-    console.log('Calendar ID:', calendarId ? 'Set' : 'Missing');
-    console.log('API Key:', apiKey ? 'Set' : 'Missing');
-
     if (!calendarId || !apiKey) {
       return NextResponse.json(
-        { 
-          error: 'Calendar configuration missing',
-          details: {
-            calendarId: !!calendarId,
-            apiKey: !!apiKey
-          }
-        },
+        { error: 'Calendar configuration missing' },
         { status: 500 }
       );
     }
@@ -52,18 +42,10 @@ export async function GET(request: NextRequest) {
 
     const url = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(calendarId)}/events?key=${apiKey}&timeMin=${now}&timeMax=${timeMax}&singleEvents=true&orderBy=startTime&maxResults=10`;
 
-    console.log('Requesting URL:', url.replace(apiKey, 'API_KEY_HIDDEN'));
-
     const response = await fetch(url);
     
     if (!response.ok) {
-      const errorText = await response.text();
-      console.error('Google Calendar API Error Details:', {
-        status: response.status,
-        statusText: response.statusText,
-        errorText: errorText
-      });
-      throw new Error(`Google Calendar API error: ${response.status} - ${errorText}`);
+      throw new Error(`Google Calendar API error: ${response.status}`);
     }
 
     const data: CalendarResponse = await response.json();
