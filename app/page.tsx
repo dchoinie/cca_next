@@ -4,6 +4,7 @@ import { ClassicalEducation } from "@/components/custom/classical-education";
 import { Testimonials } from "@/components/custom/testimonials";
 import { CTASection } from "@/components/custom/cta-section";
 import { StudentLife } from "@/components/custom/student-life";
+import { UpcomingEvents } from "@/components/custom/upcoming-events";
 import { SEO } from "@/components/custom/seo";
 import { AnimatedSection } from "@/components/custom/animated-section";
 
@@ -41,6 +42,9 @@ export default function Home() {
         <Testimonials />
       </AnimatedSection>
       <AnimatedSection direction="up" delay={1}>
+        <UpcomingEvents />
+      </AnimatedSection>
+      <AnimatedSection direction="up" delay={1.2}>
         <StudentLife />
       </AnimatedSection>
     </main>
