@@ -1,27 +1,11 @@
-"use client";
+'use client'
 
 import { PageHero } from "@/components/custom/page-hero";
-import { getHandbookSections } from "@/lib/sanity/queries";
-import { PortableText } from "@portabletext/react";
 import { SEO } from "@/components/custom/seo";
 import { motion, useInView } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
-import { Skeleton } from "@/components/ui/skeleton";
-import { Input } from "@/components/ui/input";
-import { Search } from "lucide-react";
-
-interface PortableTextBlock {
-  _type: string;
-  children: { text: string }[];
-  style: string;
-}
-
-interface HandbookSection {
-  _id: string;
-  section: string;
-  description: string;
-  extraContent?: PortableTextBlock[];
-}
+import { useRef } from "react";
+import { Button } from "@/components/ui/button";
+import { Download, FileText, BookOpen, Users, Shield } from "lucide-react";
 
 function AnimatedSection({
   children,
@@ -49,43 +33,15 @@ function AnimatedSection({
   );
 }
 
-function SectionSkeleton() {
-  return (
-    <div className="bg-white rounded-lg shadow-sm border border-border p-6 md:p-8">
-      <Skeleton className="h-8 w-3/4 mb-4" />
-      <Skeleton className="h-4 w-full mb-6" />
-      <div className="space-y-3">
-        <Skeleton className="h-4 w-full" />
-        <Skeleton className="h-4 w-5/6" />
-        <Skeleton className="h-4 w-4/6" />
-      </div>
-    </div>
-  );
-}
-
 export default function StudentHandbookPage() {
-  const [sections, setSections] = useState<HandbookSection[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [searchQuery, setSearchQuery] = useState("");
-
-  useEffect(() => {
-    async function fetchSections() {
-      try {
-        const data = await getHandbookSections();
-        setSections(data as HandbookSection[]);
-      } catch (error) {
-        console.error("Error fetching handbook sections:", error);
-      } finally {
-        setIsLoading(false);
-      }
-    }
-
-    fetchSections();
-  }, []);
-
-  const filteredSections = sections.filter((section) =>
-    section.section.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = '/files/handbook.pdf';
+    link.download = 'CCA_Student_Handbook.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <main>
@@ -115,80 +71,96 @@ export default function StudentHandbookPage() {
         <div className="max-w-4xl mx-auto">
           {/* Introduction */}
           <AnimatedSection delay={0.1}>
-            <div className="mb-12">
-              <p className="text-muted-foreground">
+            <div className="mb-12 text-center">
+              <p className="text-muted-foreground text-lg mb-8">
                 Welcome to the Concordia Christian Academy Student Handbook.
-                This handbook contains important information about our school
-                policies, procedures, and expectations. Please take time to
-                review this information carefully.
+                This comprehensive guide contains important information about our school
+                policies, procedures, and expectations for students and families.
+              </p>
+              
+              {/* Download Button */}
+              <div className="flex justify-center">
+                <Button 
+                  onClick={handleDownload}
+                  size="lg"
+                  className="bg-primary hover:bg-primary/90 text-white px-8 py-3 text-lg"
+                >
+                  <Download className="mr-2 h-5 w-5" />
+                  Download Student Handbook PDF
+                </Button>
+              </div>
+            </div>
+          </AnimatedSection>
+
+          {/* Handbook Overview */}
+          <AnimatedSection delay={0.2}>
+            <div className="mb-12">
+              <h2 className="text-3xl font-bold text-primary mb-8 text-center">
+                What&apos;s Included in the Handbook
+              </h2>
+              
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="bg-white rounded-lg shadow-sm border border-border p-6">
+                  <div className="flex items-center mb-4">
+                    <BookOpen className="h-8 w-8 text-primary mr-3" />
+                    <h3 className="text-xl font-semibold text-primary">Academic Policies</h3>
+                  </div>
+                  <p className="text-muted-foreground">
+                    Comprehensive information about our academic standards, grading policies, 
+                    homework expectations, and assessment procedures.
+                  </p>
+                </div>
+
+                <div className="bg-white rounded-lg shadow-sm border border-border p-6">
+                  <div className="flex items-center mb-4">
+                    <Users className="h-8 w-8 text-primary mr-3" />
+                    <h3 className="text-xl font-semibold text-primary">Student Life</h3>
+                  </div>
+                  <p className="text-muted-foreground">
+                    Guidelines for student conduct, dress code, attendance policies, 
+                    and expectations for behavior in our Christian learning environment.
+                  </p>
+                </div>
+
+                <div className="bg-white rounded-lg shadow-sm border border-border p-6">
+                  <div className="flex items-center mb-4">
+                    <Shield className="h-8 w-8 text-primary mr-3" />
+                    <h3 className="text-xl font-semibold text-primary">Safety & Security</h3>
+                  </div>
+                  <p className="text-muted-foreground">
+                    Important safety protocols, emergency procedures, and security 
+                    measures to ensure a safe learning environment for all students.
+                  </p>
+                </div>
+
+                <div className="bg-white rounded-lg shadow-sm border border-border p-6">
+                  <div className="flex items-center mb-4">
+                    <FileText className="h-8 w-8 text-primary mr-3" />
+                    <h3 className="text-xl font-semibold text-primary">Parent Resources</h3>
+                  </div>
+                  <p className="text-muted-foreground">
+                    Information for parents including communication protocols, 
+                    volunteer opportunities, and ways to support your child&apos;s education.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </AnimatedSection>
+
+          {/* Important Note */}
+          <AnimatedSection delay={0.3}>
+            <div className="p-6 bg-primary/5 rounded-lg border border-primary/10">
+              <h3 className="text-lg font-semibold text-primary mb-2">
+                Important Note
+              </h3>
+              <p className="text-muted-foreground">
+                This handbook is subject to updates and modifications throughout
+                the school year. Students and parents will be notified of any
+                significant changes. Please download the latest version to ensure
+                you have the most current information.
               </p>
             </div>
           </AnimatedSection>
-
-          {/* Search Input */}
-          <AnimatedSection delay={0.2}>
-            <div className="mb-8 relative">
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
-                <Input
-                  type="text"
-                  placeholder="Search handbook sections..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-10"
-                />
-              </div>
-            </div>
-          </AnimatedSection>
-
-          {/* Handbook Sections */}
-          <div className="space-y-12">
-            {isLoading ? (
-              // Show 3 skeleton sections while loading
-              Array.from({ length: 3 }).map((_, index) => (
-                <div key={index}>
-                  <SectionSkeleton />
-                </div>
-              ))
-            ) : filteredSections.length > 0 ? (
-              filteredSections.map((section) => (
-                <div key={section._id}>
-                  <div className="bg-white rounded-lg shadow-sm border border-border p-6 md:p-8 h-full">
-                    <h2 className="text-2xl font-semibold text-primary mb-4">
-                      {section.section}
-                    </h2>
-                    <p className="text-muted-foreground mb-6">
-                      {section.description}
-                    </p>
-                    {section.extraContent &&
-                      section.extraContent.length > 0 && (
-                        <div className="prose prose-sm max-w-none">
-                          <PortableText value={section.extraContent} />
-                        </div>
-                      )}
-                  </div>
-                </div>
-              ))
-            ) : (
-              <div className="text-center p-8 bg-muted/20 rounded-lg border border-border">
-                <p className="text-muted-foreground">
-                  No sections found matching &ldquo;{searchQuery}&rdquo;
-                </p>
-              </div>
-            )}
-          </div>
-
-          {/* Important Note */}
-          <div className="mt-12 p-6 bg-primary/5 rounded-lg border border-primary/10">
-            <h3 className="text-lg font-semibold text-primary mb-2">
-              Important Note
-            </h3>
-            <p className="text-muted-foreground">
-              This handbook is subject to updates and modifications throughout
-              the school year. Students and parents will be notified of any
-              significant changes.
-            </p>
-          </div>
         </div>
       </div>
     </main>
