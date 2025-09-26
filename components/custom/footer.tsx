@@ -45,7 +45,7 @@ export function Footer() {
                 <MapPin className="h-4 w-4" />
                 2101 Lor Ray Dr
                 <br />
-                North Mankato, MN 56001
+                North Mankato, MN 56003
               </a>
               <a
                 href="tel:+15073047430"

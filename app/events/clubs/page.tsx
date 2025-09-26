@@ -259,8 +259,48 @@ export default function ClubsPage() {
           </div>
         </AnimatedSection>
 
-        {/* Call to Action */}
+        {/* Information Boxes */}
         <AnimatedSection delay={0.7}>
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+              <h3 className="font-serif text-lg text-blue-900 mb-3">
+                Club Fees
+              </h3>
+              <p className="text-blue-800">
+                All extra-curricular fees are $50/pp or $125 max per family
+              </p>
+            </div>
+            
+            <div className="bg-green-50 border border-green-200 rounded-lg p-6">
+              <h3 className="font-serif text-lg text-green-900 mb-3">
+                Interested in Leading a Club?
+              </h3>
+              <p className="text-green-800 mb-3">
+                There is a stipend provided for club leaders and coaches.
+              </p>
+              <p className="text-sm text-green-700">
+                For more information contact Suzi Smith at{" "}
+                <a 
+                  href="mailto:ccamankato@gmail.com" 
+                  className="text-green-600 hover:text-green-800 underline"
+                >
+                  ccamankato@gmail.com
+                </a>{" "}
+                or call the school office at{" "}
+                <a 
+                  href="tel:507-304-7430" 
+                  className="text-green-600 hover:text-green-800 underline"
+                >
+                  507-304-7430
+                </a>
+                .
+              </p>
+            </div>
+          </div>
+        </AnimatedSection>
+
+        {/* Call to Action */}
+        <AnimatedSection delay={0.8}>
           <div className="bg-primary/5 rounded-lg p-8 max-w-3xl mx-auto text-center">
             <h3 className="font-serif text-xl text-primary mb-4">
               Interested in Joining a Club?
