@@ -9,51 +9,61 @@ import {
 
 interface OpenPosition {
   title: string;
-  description: string | React.ReactNode;
-  requirements?: string | React.ReactNode;
-  preferred?: string | React.ReactNode;
+  reportsTo: string;
+  startTime: string;
+  positionType: string;
+  salaryRange: string;
+  contact: {
+    mail: string;
+    email: string;
+  };
+  whoWeAreLookingFor: string;
+  qualifications: string[];
+  candidatesMust: string[];
+  responsibilities: string[];
+  benefits: string[];
   active: boolean;
 }
 
 const openPositions: OpenPosition[] = [
   {
-    title: "Admissions & Office Director",
-    description:
-      "The Admissions & Office Director will help manage Concorida Classical Academy's daily operations. Areas of mipact include serving as the public face of teh school in interacting with families and the community, promotion of the school, answer and diredct phone calls to the school, management of the SIS system for recruiting and admissions of students and families, manage student and family demographic information, manage studen absence and tardy information, help in planning, organizing, coordinating, administering, and managing school activities and facility management. The Admissions and Office Director is a professional contact for CCA's relationship with the church and other outside vendors.",
-    requirements: (
-      <>
-        <li>Bachelor&apos;s Degree</li>
-        <li>
-          A practicing Christian who supports the values of the LCMS and is
-          willing to engage in the life of the ministry.
-        </li>
-      </>
-    ),
-    preferred: (
-      <>
-        <li>5+ years of experience in organization and office management.</li>
-        <li>Understands Classical pedagogy in education.</li>
-      </>
-    ),
-    active: false,
-  },
-  {
-    title: "Cook",
-    description:
-      "The cook will be responsible for preparing and serving meals to the students and staff at Concordia Classical Academy. The cook will be responsible for the daily meal plan and menu, and will be responsible for the cleanliness of the kitchen and dining area.",
-    active: false,
-  },
-  {
-    title: "Custodian",
-    description:
-      "The custodian will maintain the cleanliness and upkeep of the school building and grounds, performing daily cleaning tasks and general maintenance as needed.",
-    active: false,
-  },
-  {
-    title: "Before Care",
-    description:
-      "The before care will be responsible for the care of the students before the start of the school day. The before care will be responsible for the daily care of the students, and will be responsible for the cleanliness of the before care area.",
-    active: false,
+    title: "K-8 Latin and Middle School Teacher",
+    reportsTo: "Headmaster and the Academic Dean",
+    startTime: "July 2026",
+    positionType: "Full-time teaching position",
+    salaryRange: "$40,000 - $48,000",
+    contact: {
+      mail: "2101 Lor Ray Drive, North Mankato, MN 56003",
+      email: "pastor@ccamankato.education",
+    },
+    whoWeAreLookingFor:
+      "Concordia Classical Academy is prayerfully seeking a gifted and passionate confessional Christian educator to join us in our mission to partner with families to help students to grow in the grace and knowledge of our Lord Jesus Christ as they grow in body, mind, and spirit with truth, goodness, and beauty.",
+    qualifications: [
+      "A bachelor's degree or higher, preferable in elementary education or classical education",
+      "Five or more years of teaching experience with students ranging from K-8th grade",
+      "Experience teaching Latin",
+      "Knowledge of classical education",
+      "A love for teamwork",
+      "A drive to help students grow in the grace and knowledge of our Lord and Savior Jesus Christ in body, mind and spirit through what is true, good, and beautiful",
+      "Willing to be flexible to teach other subjects as needed as our school continues to grow",
+      "*New graduates are also encouraged to apply!",
+    ],
+    candidatesMust: [
+      "Be a confessing Christian who agrees that the Bible is the true and inerrant Word of God and the only source of doctrine and truth",
+      "Agree that the Apostle's Creed is a true and trustworthy statement of the Christian faith",
+      "Be an active, practicing member of a Christian congregation (preferable Lutheran) that agrees with the above statements of teaching",
+    ],
+    responsibilities: [
+      "Teach all Latin classes in grades K-8",
+      "Review curriculum needs for the Latin program and implement a systemic program of instruction",
+      "Teach other subjects as needed and according to subject-matter mastery in grades 5-8",
+    ],
+    benefits: [
+      "Opportunities for professional development",
+      "A supportive work environment",
+      "Concordia Plan benefits",
+    ],
+    active: true,
   },
 ];
 
@@ -99,33 +109,114 @@ export default function Careers() {
                   .filter((position) => position.active)
                   .map((position, index) => (
                     <AccordionItem key={index} value={`item-${index}`}>
-                      <AccordionTrigger className="text-lg font-semibold cursor-pointer">
+                      <AccordionTrigger className="text-lg font-semibold cursor-pointer text-left">
                         {position.title}
                       </AccordionTrigger>
                       <AccordionContent>
-                        <div className="space-y-4">
-                          <div>
-                            <h4 className="font-medium mb-2">Description</h4>
-                            <p>{position.description}</p>
-                          </div>
-                          {position.requirements && (
+                        <div className="space-y-6 pt-2">
+                          {/* Position Overview */}
+                          <div className="grid gap-2 sm:grid-cols-2">
                             <div>
-                              <h4 className="font-medium mb-2">Requirements</h4>
-                              <ul className="list-disc pl-5">
-                                {position.requirements}
-                              </ul>
-                            </div>
-                          )}
-                          {position.preferred && (
-                            <div>
-                              <h4 className="font-medium mb-2">
-                                Preferred Qualifications
+                              <h4 className="font-semibold text-sm text-muted-foreground uppercase tracking-wide mb-1">
+                                Reports To
                               </h4>
-                              <ul className="list-disc pl-5">
-                                {position.preferred}
-                              </ul>
+                              <p>{position.reportsTo}</p>
                             </div>
-                          )}
+                            <div>
+                              <h4 className="font-semibold text-sm text-muted-foreground uppercase tracking-wide mb-1">
+                                Start Time
+                              </h4>
+                              <p>{position.startTime}</p>
+                            </div>
+                            <div>
+                              <h4 className="font-semibold text-sm text-muted-foreground uppercase tracking-wide mb-1">
+                                Position Type
+                              </h4>
+                              <p>{position.positionType}</p>
+                            </div>
+                            <div>
+                              <h4 className="font-semibold text-sm text-muted-foreground uppercase tracking-wide mb-1">
+                                Salary Range
+                              </h4>
+                              <p>{position.salaryRange}</p>
+                            </div>
+                          </div>
+
+                          {/* Contact */}
+                          <div>
+                            <h4 className="font-semibold mb-2">How to Apply</h4>
+                            <p className="mb-2">
+                              Please send your resume and a letter of intent to
+                              Concordia Classical Academy by mail or email:
+                            </p>
+                            <p className="mb-1">
+                              <span className="font-medium">Mail:</span>{" "}
+                              {position.contact.mail}
+                            </p>
+                            <p>
+                              <span className="font-medium">Email:</span>{" "}
+                              <a
+                                href={`mailto:${position.contact.email}`}
+                                className="text-primary hover:underline"
+                              >
+                                {position.contact.email}
+                              </a>
+                            </p>
+                          </div>
+
+                          {/* Who We Are Looking For */}
+                          <div>
+                            <h4 className="font-semibold mb-2">
+                              Who We Are Looking For
+                            </h4>
+                            <p>{position.whoWeAreLookingFor}</p>
+                          </div>
+
+                          {/* Qualifications */}
+                          <div>
+                            <h4 className="font-semibold mb-2">
+                              Qualifications
+                            </h4>
+                            <ul className="list-disc pl-5 space-y-1">
+                              {position.qualifications.map((q, i) => (
+                                <li key={i}>{q}</li>
+                              ))}
+                            </ul>
+                          </div>
+
+                          {/* Candidates Must */}
+                          <div>
+                            <h4 className="font-semibold mb-2">
+                              Candidates Must
+                            </h4>
+                            <ul className="list-disc pl-5 space-y-1">
+                              {position.candidatesMust.map((c, i) => (
+                                <li key={i}>{c}</li>
+                              ))}
+                            </ul>
+                          </div>
+
+                          {/* Responsibilities */}
+                          <div>
+                            <h4 className="font-semibold mb-2">
+                              As our Latin and middle school teacher, you will
+                            </h4>
+                            <ul className="list-disc pl-5 space-y-1">
+                              {position.responsibilities.map((r, i) => (
+                                <li key={i}>{r}</li>
+                              ))}
+                            </ul>
+                          </div>
+
+                          {/* Benefits */}
+                          <div>
+                            <h4 className="font-semibold mb-2">Benefits</h4>
+                            <ul className="list-disc pl-5 space-y-1">
+                              {position.benefits.map((b, i) => (
+                                <li key={i}>{b}</li>
+                              ))}
+                            </ul>
+                          </div>
                         </div>
                       </AccordionContent>
                     </AccordionItem>
