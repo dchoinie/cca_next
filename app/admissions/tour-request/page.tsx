@@ -1,7 +1,7 @@
 "use client";
 
+import { CalendlyInlineWidget } from "@/components/custom/calendly-inline-widget";
 import { PageHero } from "@/components/custom/page-hero";
-import { ScheduleVisitForm } from "@/components/custom/schedule-visit-form";
 import { SEO } from "@/components/custom/seo";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -121,17 +121,15 @@ export default function TourRequestPage() {
           </div>
         </AnimatedSection>
 
-        {/* Form Section */}
+        {/* Schedule Section */}
         <AnimatedSection delay={0.2}>
           <div className="bg-primary/5 rounded-lg p-8">
             <div className="max-w-2xl mx-auto">
-              <ScheduleVisitForm
-                trigger={
-                  <button className="w-full inline-flex items-center justify-center px-8 py-4 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition-colors text-lg cursor-pointer">
-                    Schedule Your Visit Now
-                  </button>
-                }
-              />
+              <p className="text-slate-600 mb-6 text-center">
+                Choose a time that works for you below and we&apos;ll be ready
+                to welcome you.
+              </p>
+              <CalendlyInlineWidget />
             </div>
           </div>
         </AnimatedSection>

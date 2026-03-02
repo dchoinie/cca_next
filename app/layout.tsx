@@ -4,6 +4,7 @@ import "./globals.css";
 import { NavBar } from "@/components/custom/header/nav";
 import { PageWrapper } from "@/components/custom/page-wrapper";
 import { Footer } from "@/components/custom/footer";
+import { JobPostingPopup } from "@/components/custom/job-posting-popup";
 import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -26,6 +27,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <NavBar />
         <PageWrapper>{children}</PageWrapper>
         <Footer />
+        <JobPostingPopup />
       </body>
     </html>
   );
