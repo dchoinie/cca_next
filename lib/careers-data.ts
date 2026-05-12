@@ -54,6 +54,6 @@ export const openPositions: OpenPosition[] = [
       "A supportive work environment",
       "Concordia Plan benefits",
     ],
-    active: true,
+    active: false,
   },
 ];
