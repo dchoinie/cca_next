@@ -13,6 +13,7 @@ import {
   ShieldCheck,
   Phone,
   Mail,
+  ClipboardList,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -71,19 +72,19 @@ export default function HomeschoolPartnershipPage() {
         <AnimatedSection delay={0.1}>
           <div className="text-center max-w-3xl mx-auto mb-14">
             <blockquote className="text-xl md:text-2xl font-serif text-primary italic leading-relaxed mb-3">
-              &ldquo;Children are a gift from the Lord...&rdquo;
+              &ldquo;Children are a gift from God, entrusted to parents.&rdquo;
             </blockquote>
             <p className="text-sm text-slate-500 mb-8">— Psalm 127:3–5</p>
             <p className="text-lg text-slate-600 leading-relaxed mb-6">
-              At Concordia Classical Academy (CCA), we joyfully affirm that
-              children are entrusted to parents, and families play a central
-              role in their education and formation.
+              At Concordia Classical Academy (CCA), we recognize that parents
+              are the primary educators of their children and that education is
+              most fruitful when schools and families work together in unity.
             </p>
             <div className="bg-primary/5 border border-primary/10 rounded-lg px-8 py-6">
               <p className="text-base text-slate-700 italic leading-relaxed">
                 &ldquo;In partnership with families, we strive to help students
                 grow in the grace and knowledge of our Lord Jesus Christ as they
-                grow in body, mind, and spirit with truth, goodness, and
+                grow in body, mind, and spirit through truth, goodness, and
                 beauty.&rdquo;
               </p>
               <p className="text-sm text-slate-500 mt-3">— CCA Mission Statement</p>
@@ -98,70 +99,136 @@ export default function HomeschoolPartnershipPage() {
               You Are Welcome Here
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
-              Homeschool families in our community are warmly invited to partner
-              with CCA in meaningful ways. If you are seeking Christ-centered,
+              CCA welcomes homeschool families to partner with our school
+              community in a variety of ways. If you are seeking Christ-centered,
               classical enrichment and community, we would love to walk
               alongside you.
             </p>
           </div>
         </AnimatedSection>
 
-        {/* Partnership Opportunities Overview */}
+        {/* Partnership Process */}
+        <AnimatedSection delay={0.25}>
+          <div className="mb-16">
+            <div className="flex items-center gap-3 mb-6">
+              <ClipboardList className="h-6 w-6 text-primary shrink-0" />
+              <h2 className="text-2xl font-serif text-primary">
+                Homeschool Partnership Process
+              </h2>
+            </div>
+            <ol className="space-y-4">
+              {[
+                {
+                  step: "1",
+                  title: "Initial Inquiry",
+                  detail: "Student name(s) and age(s), desired classes or programs, and desired schedule/time commitment.",
+                },
+                {
+                  step: "2",
+                  title: "Campus Tour & Faculty Introduction",
+                  detail: null,
+                },
+                {
+                  step: "3",
+                  title: "Family Interview",
+                  detail: "This may be completed during the campus tour.",
+                  italic: true,
+                },
+                {
+                  step: "4",
+                  title: "Submission of Application Materials",
+                  detail: null,
+                },
+                {
+                  step: "5",
+                  title: "Upon Acceptance",
+                  detail: "Completion of enrollment paperwork and payment of registration and book fees.",
+                },
+                {
+                  step: "6",
+                  title: "Welcome to the CCA Community!",
+                  detail: null,
+                },
+              ].map(({ step, title, detail, italic }) => (
+                <li
+                  key={step}
+                  className="flex gap-4 bg-slate-50 rounded-lg p-4 border border-slate-200"
+                >
+                  <span className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center">
+                    {step}
+                  </span>
+                  <div>
+                    <p className="font-semibold text-primary">{title}</p>
+                    {detail && (
+                      <p
+                        className={`text-slate-600 text-sm mt-0.5 ${
+                          italic ? "italic" : ""
+                        }`}
+                      >
+                        {detail}
+                      </p>
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </AnimatedSection>
+
+        {/* Partnership Commitments */}
         <AnimatedSection delay={0.3}>
           <div className="mb-16">
-            <h2 className="text-2xl font-serif text-primary text-center mb-8">
-              Partnership Opportunities
+            <h2 className="text-2xl font-serif text-primary mb-6">
+              Homeschool Partnership Commitments
             </h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-white rounded-lg shadow-sm border border-border p-6 text-center">
-                <div className="flex justify-center mb-4">
-                  <div className="bg-primary/10 rounded-full p-3">
-                    <BookOpen className="h-7 w-7 text-primary" />
-                  </div>
-                </div>
-                <h3 className="text-lg font-serif text-primary mb-2">
-                  Academic Classes
-                </h3>
-                <p className="text-slate-600 text-sm leading-relaxed">
-                  Enroll in individual subject courses alongside CCA students,
-                  space permitting.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-lg shadow-sm border border-border p-6 text-center">
-                <div className="flex justify-center mb-4">
-                  <div className="bg-primary/10 rounded-full p-3">
-                    <Music className="h-7 w-7 text-primary" />
-                  </div>
-                </div>
-                <h3 className="text-lg font-serif text-primary mb-2">
-                  Music Opportunities
-                </h3>
-                <p className="text-slate-600 text-sm leading-relaxed">
-                  Join band, strings, or choir — music is central to CCA&apos;s
-                  curriculum and worship life.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-lg shadow-sm border border-border p-6 text-center">
-                <div className="flex justify-center mb-4">
-                  <div className="bg-primary/10 rounded-full p-3">
-                    <Users className="h-7 w-7 text-primary" />
-                  </div>
-                </div>
-                <h3 className="text-lg font-serif text-primary mb-2">
-                  Clubs &amp; Activities
-                </h3>
-                <p className="text-slate-600 text-sm leading-relaxed">
-                  Participate in after-school clubs, activities, and limited
-                  sports offerings each quarter.
-                </p>
-              </div>
+            <div className="bg-slate-50 rounded-lg p-6 border border-slate-200">
+              <p className="text-slate-700 text-sm font-medium mb-4">
+                As a homeschool partner family:
+              </p>
+              <ul className="space-y-3 text-slate-600 text-sm">
+                <li className="flex gap-2">
+                  <span className="text-primary font-bold mt-0.5">•</span>
+                  <span>
+                    Students in grades K–3 commit to attending at least one full
+                    day per week (or two half days) for the full academic year.
+                  </span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-primary font-bold mt-0.5">•</span>
+                  <span>
+                    Students in grades 4–8 commit to enrolling in at least one
+                    class for the full academic year.
+                  </span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-primary font-bold mt-0.5">•</span>
+                  <span>
+                    Families commit to participation for the entire academic
+                    year.
+                  </span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-primary font-bold mt-0.5">•</span>
+                  <span>
+                    Students are eligible to attend school field trips, including
+                    those that do not occur on their scheduled attendance day.
+                  </span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-primary font-bold mt-0.5">•</span>
+                  <span>
+                    Families may participate in school fundraisers and are
+                    eligible for applicable school-wide incentives or rewards
+                    connected to fundraising efforts (e.g., field trips, special
+                    events, pizza parties, extra recess, etc.).
+                  </span>
+                </li>
+              </ul>
             </div>
           </div>
         </AnimatedSection>
 
-        {/* Detailed Policy Section */}
+        {/* Policy Details header */}
         <AnimatedSection delay={0.35}>
           <div className="mb-6">
             <h2 className="text-2xl font-serif text-primary text-center mb-2">
@@ -174,74 +241,169 @@ export default function HomeschoolPartnershipPage() {
           </div>
         </AnimatedSection>
 
-        {/* Academic Classes */}
+        {/* Grades K–3 Enrollment Options */}
         <AnimatedSection delay={0.4}>
           <div className="mb-10">
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-center gap-3 mb-2">
               <BookOpen className="h-6 w-6 text-primary shrink-0" />
               <h3 className="text-xl font-serif text-primary">
-                Academic Classes
+                Grades K–3 Enrollment Options
               </h3>
             </div>
-            <p className="text-slate-500 text-sm mb-4 italic">
-              Space permitting
-            </p>
+            <p className="text-slate-500 text-sm mb-4 italic">Space permitting</p>
+
+            <div className="bg-slate-50 rounded-lg p-5 border border-slate-200 mb-4">
+              <p className="font-semibold text-primary mb-3">Attendance Options</p>
+              <ul className="space-y-2 text-slate-600 text-sm">
+                <li className="flex gap-2">
+                  <span className="text-primary font-bold mt-0.5">•</span>
+                  <span>
+                    Morning half-day program{" "}
+                    <span className="italic">(minimum of two mornings per week)</span>
+                  </span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-primary font-bold mt-0.5">•</span>
+                  <span>
+                    Afternoon half-day program{" "}
+                    <span className="italic">(minimum of two afternoons per week)</span>
+                  </span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-primary font-bold mt-0.5">•</span>
+                  <span>
+                    Full-day program{" "}
+                    <span className="italic">(minimum of one full day per week)</span>
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-slate-50 rounded-lg border border-slate-200 overflow-hidden">
+              <div className="grid grid-cols-2 bg-primary text-white text-sm font-semibold">
+                <div className="px-5 py-3">Attendance</div>
+                <div className="px-5 py-3">Rate</div>
+              </div>
+              {[
+                { attendance: "1 day per week or two half days", rate: "$55 per day" },
+                { attendance: "2 days per week or four half days", rate: "$50 per day" },
+                { attendance: "3 days per week or five half days", rate: "$45 per day" },
+                { attendance: "4 days per week", rate: "$40 per day" },
+              ].map(({ attendance, rate }, i) => (
+                <div
+                  key={i}
+                  className={`grid grid-cols-2 text-sm border-t border-slate-200 ${
+                    i % 2 === 0 ? "bg-white" : "bg-slate-50"
+                  }`}
+                >
+                  <div className="px-5 py-3 text-slate-700">{attendance}</div>
+                  <div className="px-5 py-3 font-semibold text-primary">{rate}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </AnimatedSection>
+
+        {/* Grades 4–8 Academic Classes */}
+        <AnimatedSection delay={0.45}>
+          <div className="mb-10">
+            <div className="flex items-center gap-3 mb-2">
+              <BookOpen className="h-6 w-6 text-primary shrink-0" />
+              <h3 className="text-xl font-serif text-primary">
+                Grades 4–8 Academic Classes
+              </h3>
+            </div>
+            <p className="text-slate-500 text-sm mb-4 italic">Space permitting</p>
             <div className="grid md:grid-cols-2 gap-4">
               <div className="bg-slate-50 rounded-lg p-5 border border-slate-200">
                 <p className="font-semibold text-primary mb-1">
-                  5 Days / Week
+                  Full-Time: 4–5 Days / Week
                 </p>
-                <p className="text-2xl font-serif text-primary mb-2">
-                  $900<span className="text-base font-sans text-slate-500">/year</span>
+                <p className="text-2xl font-serif text-primary mb-3">
+                  $900
+                  <span className="text-base font-sans text-slate-500">
+                    /year per class
+                  </span>
                 </p>
-                <p className="text-slate-600 text-sm">
-                  Examples: Math, Science, History
+                <p className="text-xs text-slate-500 font-semibold uppercase tracking-wide mb-2">
+                  Available subjects may include:
                 </p>
+                <ul className="text-slate-600 text-sm space-y-1">
+                  <li>• Grammar / English / Phonics / Spelling</li>
+                  <li>• Latin</li>
+                  <li>• Literature (Grade 4)</li>
+                  <li>• Math</li>
+                  <li>• Omnibus (Grades 5–8 Literature &amp; History)</li>
+                  <li>• Science</li>
+                  <li>• Theology</li>
+                </ul>
               </div>
               <div className="bg-slate-50 rounded-lg p-5 border border-slate-200">
                 <p className="font-semibold text-primary mb-1">
-                  2 Days / Week
+                  Half-Time: 1–3 Days / Week
                 </p>
-                <p className="text-2xl font-serif text-primary mb-2">
-                  $450<span className="text-base font-sans text-slate-500">/year</span>
+                <p className="text-2xl font-serif text-primary mb-3">
+                  $450
+                  <span className="text-base font-sans text-slate-500">
+                    /year per class
+                  </span>
                 </p>
-                <p className="text-slate-600 text-sm">
-                  Examples: Music, Latin
+                <p className="text-xs text-slate-500 font-semibold uppercase tracking-wide mb-2">
+                  Available subjects may include:
                 </p>
+                <ul className="text-slate-600 text-sm space-y-1">
+                  <li>• Art</li>
+                  <li>• History (Grade 4)</li>
+                  <li>• Logic</li>
+                  <li>• Music</li>
+                  <li>• Rhetoric</li>
+                  <li>• Science (Grade 4)</li>
+                </ul>
               </div>
             </div>
           </div>
         </AnimatedSection>
 
         {/* Music */}
-        <AnimatedSection delay={0.45}>
+        <AnimatedSection delay={0.5}>
           <div className="mb-10">
             <div className="flex items-center gap-3 mb-5">
               <Music className="h-6 w-6 text-primary shrink-0" />
               <h3 className="text-xl font-serif text-primary">
-                Music Opportunities
+                Music Opportunities for All Students
               </h3>
             </div>
+            <p className="text-slate-600 text-sm leading-relaxed mb-4">
+              Music is an integral part of CCA&apos;s curriculum and worship
+              life. Students are encouraged to develop their musical gifts and
+              participate in joyful worship through song and performance.
+            </p>
             <div className="grid md:grid-cols-2 gap-4">
+              <div className="bg-slate-50 rounded-lg p-5 border border-slate-200">
+                <p className="font-semibold text-primary mb-2">Choir</p>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  Homeschool students are welcome to participate in choir
+                  through enrollment in half-time classes. Families are expected
+                  to commit to all scheduled rehearsals and performances,
+                  including worship services and special events.
+                </p>
+              </div>
               <div className="bg-slate-50 rounded-lg p-5 border border-slate-200">
                 <p className="font-semibold text-primary mb-2">
                   Band &amp; Strings
                 </p>
-                <p className="text-slate-600 text-sm leading-relaxed">
-                  Private lessons with CCA band or string instructors. Eligible
-                  students may join ensemble groups. All lesson fees are paid
-                  directly to instructors, not through CCA.
+                <p className="text-slate-600 text-sm leading-relaxed mb-3">
+                  Donor-funded instruments and group instruction through CCA&apos;s
+                  Strings Program are available to{" "}
+                  <span className="font-semibold">full-time students only</span>.
+                  Private instruction is also available through CCA&apos;s
+                  instructors (pending availability), and eligible students may
+                  participate in ensemble groups.
                 </p>
-              </div>
-              <div className="bg-slate-50 rounded-lg p-5 border border-slate-200">
-                <p className="font-semibold text-primary mb-1">Choir</p>
-                <p className="text-2xl font-serif text-primary mb-2">
-                  $50<span className="text-base font-sans text-slate-500">/year</span>
-                </p>
-                <p className="text-slate-600 text-sm leading-relaxed">
-                  Music is part of CCA&apos;s core curriculum and worship life.
-                  Families must commit to participation in scheduled worship
-                  services.
+                <p className="text-slate-500 text-xs italic">
+                  Lesson fees are paid directly to instructors at $60 per full
+                  hour and are not included in CCA Homeschool Partnership
+                  tuition.
                 </p>
               </div>
             </div>
@@ -249,7 +411,7 @@ export default function HomeschoolPartnershipPage() {
         </AnimatedSection>
 
         {/* After-School Activities */}
-        <AnimatedSection delay={0.5}>
+        <AnimatedSection delay={0.55}>
           <div className="mb-10">
             <div className="flex items-center gap-3 mb-5">
               <Users className="h-6 w-6 text-primary shrink-0" />
@@ -258,19 +420,33 @@ export default function HomeschoolPartnershipPage() {
               </h3>
             </div>
             <div className="bg-slate-50 rounded-lg p-5 border border-slate-200">
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                 <div>
-                  <p className="text-slate-600 text-sm leading-relaxed mb-2">
-                    Homeschool students may participate in CCA clubs, activities,
-                    and limited sports offerings. Offerings vary by quarter.
+                  <p className="text-slate-600 text-sm leading-relaxed mb-3">
+                    Homeschool students may participate in select CCA
+                    extracurricular activities, clubs, and limited athletic
+                    offerings. Activities and clubs vary by quarter.
                   </p>
-                  <p className="text-slate-500 text-sm italic">
-                    Contact us for current quarter offerings.
+                  <p className="text-xs text-slate-500 font-semibold uppercase tracking-wide mb-2">
+                    Examples may include:
+                  </p>
+                  <ul className="text-slate-600 text-sm space-y-1">
+                    <li>• Volleyball</li>
+                    <li>• Basketball</li>
+                    <li>• Art Club</li>
+                    <li>• Theater</li>
+                  </ul>
+                  <p className="text-slate-500 text-sm italic mt-3">
+                    Please contact the school office for current offerings and
+                    availability.
                   </p>
                 </div>
-                <div className="shrink-0 text-center">
+                <div className="shrink-0 text-center md:text-right">
                   <p className="text-2xl font-serif text-primary">
-                    $50<span className="text-base font-sans text-slate-500">/activity</span>
+                    $50
+                    <span className="text-base font-sans text-slate-500">
+                      /activity
+                    </span>
                   </p>
                 </div>
               </div>
@@ -279,7 +455,7 @@ export default function HomeschoolPartnershipPage() {
         </AnimatedSection>
 
         {/* Lunch Program */}
-        <AnimatedSection delay={0.55}>
+        <AnimatedSection delay={0.6}>
           <div className="mb-10">
             <div className="flex items-center gap-3 mb-5">
               <Utensils className="h-6 w-6 text-primary shrink-0" />
@@ -290,29 +466,32 @@ export default function HomeschoolPartnershipPage() {
             <div className="bg-slate-50 rounded-lg p-5 border border-slate-200 space-y-4">
               <div className="flex flex-wrap gap-6">
                 <div>
-                  <p className="text-sm text-slate-500">Lunch (FACTS)</p>
-                  <p className="text-xl font-serif text-primary">$3.00<span className="text-sm font-sans text-slate-500">/meal</span></p>
+                  <p className="text-sm text-slate-500">Standard Lunch (FACTS)</p>
+                  <p className="text-xl font-serif text-primary">
+                    $3.00
+                    <span className="text-sm font-sans text-slate-500">/meal</span>
+                  </p>
                 </div>
                 <div>
-                  <p className="text-sm text-slate-500">Additional entrée</p>
+                  <p className="text-sm text-slate-500">Additional Entrée</p>
                   <p className="text-xl font-serif text-primary">$1.25</p>
                 </div>
               </div>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Lunches may be ordered through the FACTS system and should be
-                prepaid monthly by submitting payment to the school office. The
-                monthly menu is available on the FACTS Family Portal and in
-                printed form at the school office.
+                Lunch may be ordered through the FACTS Family Portal. Payments
+                should be prepaid monthly through the school office. Monthly
+                menus are available on the FACTS Family Portal or in printed
+                form through the school office.
               </p>
               <div className="border-t border-slate-200 pt-4">
                 <p className="text-sm font-semibold text-primary mb-2">
-                  Bringing Lunch from Home
+                  Lunch Expectations
                 </p>
                 <ul className="text-slate-600 text-sm space-y-1">
-                  <li>• Cold lunches from home are welcome</li>
+                  <li>• Students may bring a cold lunch from home</li>
                   <li>• Acceptable beverages: water or milk (milk available to all students)</li>
                   <li>• Microwave use by students is not permitted</li>
-                  <li>• Students are expected to eat in a peaceful and respectful manner</li>
+                  <li>• Students are expected to eat in a peaceful, respectful, and orderly manner</li>
                 </ul>
               </div>
             </div>
@@ -320,7 +499,7 @@ export default function HomeschoolPartnershipPage() {
         </AnimatedSection>
 
         {/* Conduct & Dress Code */}
-        <AnimatedSection delay={0.6}>
+        <AnimatedSection delay={0.65}>
           <div className="mb-14">
             <div className="flex items-center gap-3 mb-5">
               <ShieldCheck className="h-6 w-6 text-primary shrink-0" />
@@ -331,21 +510,38 @@ export default function HomeschoolPartnershipPage() {
             <div className="grid md:grid-cols-2 gap-4">
               <div className="bg-slate-50 rounded-lg p-5 border border-slate-200">
                 <p className="font-semibold text-primary mb-3">Conduct</p>
-                <p className="text-slate-600 text-sm leading-relaxed">
+                <p className="text-slate-600 text-sm leading-relaxed mb-3">
                   All homeschool students are expected to follow CCA&apos;s
-                  policies regarding student conduct and behavior —
-                  demonstrating respect, attentiveness, and Christ-centered
-                  conduct while on campus or at CCA-sponsored events.
+                  policies as indicated in the CCA Handbook. Students should
+                  demonstrate:
+                </p>
+                <ul className="text-slate-600 text-sm space-y-1">
+                  <li>• Respect for teachers and peers</li>
+                  <li>• Attentiveness in class</li>
+                  <li>• Appropriate participation</li>
+                  <li>• Christ-centered behavior on campus and at CCA-sponsored events</li>
+                </ul>
+                <p className="text-slate-500 text-xs italic mt-3">
+                  CCA reserves the right to dismiss a student or discontinue a
+                  homeschool partnership if significant behavioral concerns
+                  arise.
                 </p>
               </div>
               <div className="bg-slate-50 rounded-lg p-5 border border-slate-200">
                 <p className="font-semibold text-primary mb-3">Dress Code</p>
-                <p className="text-slate-600 text-sm leading-relaxed">
+                <p className="text-slate-600 text-sm leading-relaxed mb-3">
                   Homeschool students are expected to follow CCA dress code
-                  standards. A CCA logo shirt is not required, but clothing
-                  should be modest, neat, and consistent with CCA dress
-                  guidelines. Specific expectations will be shared upon
-                  enrollment.
+                  standards while participating in classes and school activities.
+                  A CCA logo shirt is not required, but attire should be:
+                </p>
+                <ul className="text-slate-600 text-sm space-y-1">
+                  <li>• Modest</li>
+                  <li>• Neat</li>
+                  <li>• Consistent with CCA dress code guidelines</li>
+                </ul>
+                <p className="text-slate-500 text-xs italic mt-3">
+                  The complete uniform and dress code policy will be provided
+                  upon enrollment.
                 </p>
               </div>
             </div>
@@ -353,7 +549,7 @@ export default function HomeschoolPartnershipPage() {
         </AnimatedSection>
 
         {/* CTA / Contact */}
-        <AnimatedSection delay={0.65}>
+        <AnimatedSection delay={0.7}>
           <div className="bg-primary/5 border border-primary/10 rounded-lg p-8 text-center">
             <h3 className="text-2xl font-serif text-primary mb-3">
               Ready to Partner with CCA?
