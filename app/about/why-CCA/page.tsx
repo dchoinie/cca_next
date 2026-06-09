@@ -75,6 +75,7 @@ export default function WhyCCA() {
                   src="/ss_4.png"
                   alt="Classical education"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
               </div>
@@ -165,6 +166,7 @@ export default function WhyCCA() {
                   src="/ss_5.png"
                   alt="Chapel service"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
               </div>
@@ -179,6 +181,7 @@ export default function WhyCCA() {
                   src="/ss_41.png"
                   alt="Music program"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
               </div>

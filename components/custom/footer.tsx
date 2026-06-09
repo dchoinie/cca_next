@@ -154,12 +154,22 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-gray-200">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-gray-600 text-center lg:text-left">
+          <div className="flex flex-col md:flex-row items-center gap-4">
+            <p className="flex-1 text-sm text-gray-600 text-center md:text-left">
               © {new Date().getFullYear()} Concordia Classical Academy. All
               rights reserved.
             </p>
-            <div className="flex items-center gap-6">
+            <div className="flex-1 flex justify-center items-center gap-3">
+              <span className="text-xs text-gray-500">Accredited by</span>
+              <Image
+                src="/ccle_3.avif"
+                alt="CCLE Accredited"
+                width={80}
+                height={40}
+                className="h-10 w-auto object-contain"
+              />
+            </div>
+            <div className="flex-1 flex justify-end items-center gap-6">
               <a
                 href="https://www.facebook.com/CCAMankato/"
                 target="_blank"

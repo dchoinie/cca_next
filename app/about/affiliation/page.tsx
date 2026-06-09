@@ -96,6 +96,7 @@ export default function Affiliation() {
                   src="/church_exterior.jpg"
                   alt="Good Shepherd Lutheran Church"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
               </div>
@@ -166,6 +167,7 @@ export default function Affiliation() {
                     src="/lcms_logo.jpg"
                     alt="LCMS Logo"
                     fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-contain"
                   />
                 </div>

@@ -32,6 +32,7 @@ export function CTASection() {
                 src="/luther-rose.png"
                 alt="Concordia Classical Academy Logo"
                 fill
+                sizes="80px"
                 className="object-contain"
               />
             </div>

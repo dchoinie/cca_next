@@ -25,6 +25,7 @@ export function ThemeSection() {
                 src="/cca_2024_all_school.jpg"
                 alt="Concordia Classical Academy - All School Photo 2024"
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>

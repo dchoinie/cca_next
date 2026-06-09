@@ -69,6 +69,7 @@ export function ClassicalEducation() {
                 src="/ss_13.png"
                 alt="Classical Education in Action"
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>
@@ -77,6 +78,7 @@ export function ClassicalEducation() {
                 src="/ss_18.png"
                 alt="Lutheran Education"
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>

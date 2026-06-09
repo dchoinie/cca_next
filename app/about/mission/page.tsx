@@ -100,6 +100,7 @@ export default function Mission() {
                   src="/ss_20.png"
                   alt="Students in chapel"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
               </div>
@@ -125,6 +126,7 @@ export default function Mission() {
                   src="/ss_3.png"
                   alt="Classical education in action"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
               </div>
