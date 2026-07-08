@@ -38,19 +38,19 @@ export function NavBar() {
   }
 
   return (
-    <Container className="relative w-full">
+    <Container className="relative w-full border-b border-black/5">
       <div className="flex items-center justify-end lg:justify-between w-full h-16">
         {/* Logo */}
         <Link
           href="/"
-          className="absolute top-[10%] left-4 md:left-[5%] lg:left-0 mr-6 z-10"
+          className="absolute top-[10%] left-4 md:left-[5%] lg:left-0 mr-6 z-10 transition-transform duration-300 ease-out hover:scale-105"
         >
           <Image
             src="/logo.png"
             alt="Logo"
             width={120}
             height={120}
-            className="h-12 md:h-24 lg:h-36 w-auto"
+            className="h-12 md:h-24 lg:h-36 w-auto drop-shadow-[0_8px_12px_rgba(0,0,0,0.18)]"
             priority
           />
         </Link>

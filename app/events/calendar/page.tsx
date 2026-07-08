@@ -4,6 +4,8 @@ import { PageHero } from "@/components/custom/page-hero";
 import { SEO } from "@/components/custom/seo";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { Button } from "@/components/ui/button";
+import { Download } from "lucide-react";
 
 function AnimatedSection({
   children,
@@ -32,6 +34,15 @@ function AnimatedSection({
 }
 
 export default function CalendarPage() {
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/files/26-27_School_Calendar.pdf";
+    link.download = "CCA_School_Calendar_2026-27.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="bg-white">
       <SEO
@@ -83,6 +94,26 @@ export default function CalendarPage() {
           </div>
         </AnimatedSection>
 
+        {/* PDF Download */}
+        <AnimatedSection delay={0.25}>
+          <div className="max-w-3xl mx-auto text-center mt-12">
+            <p className="text-slate-600 leading-relaxed">
+              Prefer a printable version? Download the 2026-27 school
+              calendar as a PDF below.
+            </p>
+            <div className="flex justify-center mt-6">
+              <Button
+                onClick={handleDownload}
+                size="lg"
+                className="bg-primary hover:bg-primary/90 text-white px-8 py-3 text-lg"
+              >
+                <Download className="mr-2 h-5 w-5" />
+                Download School Calendar PDF
+              </Button>
+            </div>
+          </div>
+        </AnimatedSection>
+
         {/* Note Section */}
         <AnimatedSection delay={0.3}>
           <div className="bg-primary/5 rounded-lg p-8 max-w-3xl mx-auto text-center mt-16">
@@ -90,7 +121,7 @@ export default function CalendarPage() {
               The calendar is regularly updated with new events and any schedule
               changes. For the most current information, please check back
               regularly or subscribe to the calendar using the button in the
-              bottom right corner of the calendar.
+              bottom left corner of the calendar.
             </p>
           </div>
         </AnimatedSection>

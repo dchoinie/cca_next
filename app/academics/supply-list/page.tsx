@@ -2,7 +2,11 @@
 
 import { PageHero } from "@/components/custom/page-hero";
 import { getAllSupplyLists } from "@/lib/sanity/queries";
-import { PortableText, PortableTextBlock } from "@portabletext/react";
+import {
+  PortableText,
+  PortableTextBlock,
+  PortableTextComponents,
+} from "@portabletext/react";
 import { SEO } from "@/components/custom/seo";
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
@@ -40,6 +44,34 @@ function AnimatedSection({
     </motion.div>
   );
 }
+
+const portableTextComponents: PortableTextComponents = {
+  block: {
+    normal: ({ children }) => (
+      <p className="text-slate-600 leading-relaxed mb-4 last:mb-0">
+        {children}
+      </p>
+    ),
+  },
+  list: {
+    bullet: ({ children }) => (
+      <ul className="list-disc pl-6 space-y-2 mb-4 last:mb-0">{children}</ul>
+    ),
+    number: ({ children }) => (
+      <ol className="list-decimal pl-6 space-y-2 mb-4 last:mb-0">
+        {children}
+      </ol>
+    ),
+  },
+  listItem: {
+    bullet: ({ children }) => (
+      <li className="text-slate-600 leading-relaxed pl-1">{children}</li>
+    ),
+    number: ({ children }) => (
+      <li className="text-slate-600 leading-relaxed pl-1">{children}</li>
+    ),
+  },
+};
 
 function SupplyListSkeleton() {
   return (
@@ -144,9 +176,10 @@ export default function SupplyListPage() {
                   General Supplies (All Grades)
                 </h2>
                 <div className="bg-primary/5 rounded-lg p-8">
-                  <div className="prose prose-slate max-w-none">
-                    <PortableText value={allGradesList.content} />
-                  </div>
+                  <PortableText
+                    value={allGradesList.content}
+                    components={portableTextComponents}
+                  />
                 </div>
               </div>
             </AnimatedSection>
@@ -166,9 +199,10 @@ export default function SupplyListPage() {
                     {list.grade}
                   </h2>
                   <div className="bg-white border border-slate-200 rounded-lg p-8">
-                    <div className="prose prose-slate max-w-none">
-                      <PortableText value={list.content} />
-                    </div>
+                    <PortableText
+                      value={list.content}
+                      components={portableTextComponents}
+                    />
                   </div>
                 </div>
               ))}
